@@ -18,9 +18,9 @@
     "aria": "Select events",
     "noFoundForTimePeriod": "No events found for this time period."
   },
-  "documentTitle": "Review - Frigate",
+  "documentTitle": "Review - SenseWatch",
   "recordings": {
-    "documentTitle": "Recordings - Frigate"
+    "documentTitle": "Recordings - SenseWatch"
   },
   "calendarFilter": {
     "last24Hours": "Last 24 Hours"

@@ -1,15 +1,15 @@
 {
   "documentTitle": {
-    "default": "Settings - Frigate",
-    "authentication": "Authentication Settings - Frigate",
-    "camera": "Camera Settings - Frigate",
-    "enrichments": "Enrichments Settings - Frigate",
-    "masksAndZones": "Mask and Zone Editor - Frigate",
-    "motionTuner": "Motion Tuner - Frigate",
-    "object": "Debug - Frigate",
-    "general": "General Settings - Frigate",
-    "frigatePlus": "Frigate+ Settings - Frigate",
-    "notifications": "Notification Settings - Frigate"
+    "default": "Settings - SenseWatch",
+    "authentication": "Authentication Settings - SenseWatch",
+    "camera": "Camera Settings - SenseWatch",
+    "enrichments": "Enrichments Settings - SenseWatch",
+    "masksAndZones": "Mask and Zone Editor - SenseWatch",
+    "motionTuner": "Motion Tuner - SenseWatch",
+    "object": "Debug - SenseWatch",
+    "general": "General Settings - SenseWatch",
+    "frigatePlus": "Frigate+ Settings - SenseWatch",
+    "notifications": "Notification Settings - SenseWatch"
   },
   "menu": {
     "ui": "UI",

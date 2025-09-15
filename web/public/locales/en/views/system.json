@@ -1,13 +1,13 @@
 {
   "documentTitle": {
-    "cameras": "Cameras Stats - Frigate",
-    "storage": "Storage Stats - Frigate",
-    "general": "General Stats - Frigate",
-    "enrichments": "Enrichments Stats - Frigate",
+    "cameras": "Cameras Stats - SenseWatch",
+    "storage": "Storage Stats - SenseWatch",
+    "general": "General Stats - SenseWatch",
+    "enrichments": "Enrichments Stats - SenseWatch",
     "logs": {
-      "frigate": "Frigate Logs - Frigate",
-      "go2rtc": "Go2RTC Logs - Frigate",
-      "nginx": "Nginx Logs - Frigate"
+      "frigate": "SenseWatch Logs - SenseWatch",
+      "go2rtc": "Go2RTC Logs - SenseWatch",
+      "nginx": "Nginx Logs - SenseWatch"
     }
   },
   "title": "System",
@@ -89,7 +89,7 @@
     "overview": "Overview",
     "recordings": {
       "title": "Recordings",
-      "tips": "This value represents the total storage used by the recordings in Frigate's database. Frigate does not track storage usage for all files on your disk.",
+      "tips": "This value represents the total storage used by the recordings in SenseWatch's database. FSenseWatch does not track storage usage for all files on your disk.",
       "earliestRecording": "Earliest recording available:"
     },
     "shm": {
@@ -105,7 +105,7 @@
       "bandwidth": "Bandwidth",
       "unused": {
         "title": "Unused",
-        "tips": "This value may not accurately represent the free space available to Frigate if you have other files stored on your drive beyond Frigate's recordings. Frigate does not track storage usage outside of its recordings."
+        "tips": "This value may not accurately represent the free space available to SenseWatch if you have other files stored on your drive beyond SenseWatch's recordings. SenseWatch does not track storage usage outside of its recordings."
       }
     }
   },

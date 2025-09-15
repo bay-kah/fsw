@@ -1,9 +1,9 @@
 {
   "restart": {
-    "title": "Are you sure you want to restart Frigate?",
+    "title": "Are you sure you want to restart SenseWatch?",
     "button": "Restart",
     "restarting": {
-      "title": "Frigate is Restarting",
+      "title": "SenseWatch is Restarting",
       "content": "This page will reload in {{countdown}} seconds.",
       "button": "Force Reload Now"
     }
