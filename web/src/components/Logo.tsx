@@ -3,10 +3,77 @@ import { cn } from "@/lib/utils";
 type LogoProps = {
   className?: string;
 };
+
 export default function Logo({ className }: LogoProps) {
   return (
-    <svg viewBox="0 0 512 512" className={cn("fill-current", className)}>
-      <path d="M130 446.5C131.6 459.3 145 468 137 470C129 472 94 406.5 86 378.5C78 350.5 73.5 319 75.5 301C77.4999 283 181 255 181 247.5C181 240 147.5 247 146 241C144.5 235 171.3 238.6 178.5 229C189.75 214 204 216.5 213 208.5C222 200.5 233 170 235 157C237 144 215 129 209 119C203 109 222 102 268 83C314 64 460 22 462 27C464 32 414 53 379 66C344 79 287 104 287 111C287 118 290 123.5 288 139.5C286 155.5 285.76 162.971 282 173.5C279.5 180.5 277 197 282 212C286 224 299 233 305 235C310 235.333 323.8 235.8 339 235C358 234 385 236 385 241C385 246 344 243 344 250C344 257 386 249 385 256C384 263 350 260 332 260C317.6 260 296.333 259.333 287 256L285 263C281.667 263 274.7 265 267.5 265C258.5 265 258 268 241.5 268C225 268 230 267 215 266C200 265 144 308 134 322C124 336 130 370 130 385.5C130 399.428 128 430.5 130 446.5Z" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1024 1024"
+      role="img"
+      aria-label="SenseWatch monitor with 2×2 camera grid"
+      className={cn("fill-current", className)}
+      style={{
+        "--sw-monitor": "#1c1f22",
+        "--sw-screen": "#111315",
+        "--sw-tile": "#222529",
+        "--sw-stroke": "#2a2d31",
+        "--sw-icon": "#8f949b",
+        "--sw-accent": "#5DFD88"
+      } as React.CSSProperties}
+    >
+      {/* Monitor body */}
+      <rect x="132" y="140" width="760" height="620" rx="28" fill="var(--sw-monitor)"/>
+      <rect x="164" y="172" width="696" height="556" rx="18" fill="var(--sw-screen)"/>
+
+      {/* Stand */}
+      <rect x="446" y="764" width="132" height="44" rx="8" fill="var(--sw-monitor)"/>
+      <path d="M392 808h240c10 0 18 8 18 18v36H374v-36c0-10 8-18 18-18z" fill="var(--sw-monitor)"/>
+
+      {/* Screen grid (2×2) */}
+      <g transform="translate(184 192)">
+        {/* Tiles */}
+        <rect x="0"   y="0"   width="320" height="240" rx="14" fill="var(--sw-tile)"/>
+        <rect x="348" y="0"   width="320" height="240" rx="14" fill="var(--sw-tile)"/>
+        <rect x="0"   y="268" width="320" height="240" rx="14" fill="var(--sw-tile)"/>
+        <rect x="348" y="268" width="320" height="240" rx="14" fill="var(--sw-tile)"/>
+
+        {/* Grid separators */}
+        <line x1="328" y1="0"   x2="328" y2="508" stroke="var(--sw-stroke)" strokeWidth="4"/>
+        <line x1="0"   y1="248" x2="668" y2="248" stroke="var(--sw-stroke)" strokeWidth="4"/>
+
+        {/* Green highlight frames */}
+        <rect x="348" y="0"   width="320" height="240" rx="14" fill="none" stroke="var(--sw-accent)" strokeWidth="12"/>
+        <rect x="0"   y="268" width="320" height="240" rx="14" fill="none" stroke="var(--sw-accent)" strokeWidth="12"/>
+
+        {/* Top-left: CCTV camera */}
+        <g transform="translate(36 44)" fill="var(--sw-icon)">
+          <rect x="14" y="46" width="24" height="66" rx="6"/>
+          <path d="M52 40h112c10 0 18 8 18 18v24c0 10-8 18-18 18H52l-26-20V60l26-20z"/>
+          <circle cx="154" cy="86" r="10" fill="var(--sw-accent)"/>
+        </g>
+
+        {/* Top-right: two people */}
+        <g transform="translate(420 40)" fill="var(--sw-icon)">
+          <circle cx="56" cy="46" r="22"/>
+          <path d="M38 80c-2 22 2 52 2 92h36c8-38 16-70 16-92 0-18-14-32-32-32s-31 14-22 32z"/>
+          <circle cx="142" cy="46" r="22"/>
+          <path d="M124 80c-2 22 2 52 2 92h36c8-38 16-70 16-92 0-18-14-32-32-32s-31 14-22 32z"/>
+        </g>
+
+        {/* Bottom-left: crouching person with bag */}
+        <g transform="translate(58 318)" fill="var(--sw-icon)">
+          <circle cx="70" cy="22" r="18"/>
+          <path d="M46 50c-14 10-20 28-18 48l8 58h38l-6-44 26 18h54c10 0 18-8 18-18s-8-18-18-18h-38l-22-24c-6-8-22-20-42-20z"/>
+          <rect x="138" y="54" width="48" height="52" rx="6"/>
+          <path d="M138 54c0-14 10-24 24-24s24 10 24 24" fill="none" stroke="var(--sw-icon)" strokeWidth="8"/>
+        </g>
+
+        {/* Bottom-right: door */}
+        <g transform="translate(388 312)" fill="var(--sw-icon)">
+          <rect x="94" y="10" width="132" height="192" rx="6" opacity="0.85"/>
+          <circle cx="214" cy="106" r="6" fill="var(--sw-screen)"/>
+        </g>
+      </g>
     </svg>
   );
 }
