@@ -104,82 +104,60 @@
   }
 
   .dark {
-    --background: hsl(117, 12%, 4%);
     --background: 117 12% 4%;
-
-    --background-alt: hsl(0, 0%, 1%);
     --background-alt: 0 0% 1%;
+    
+    --foreground: 0 0% 100%;
 
-    --foreground: hsl(0, 0%, 100%);
-    --foreground: 0, 0%, 100%;
-
-    --card: hsl(0, 0%, 15%);
-    --card: 0, 0%, 15%;
-
-    --card-foreground: hsl(120, 40%, 98%);
+    --card: 0 0% 15%;
     --card-foreground: 120 40% 98%;
 
-    --popover: hsl(0, 0%, 15%);
-    --popover: 0, 0%, 15%;
-
-    --popover-foreground: hsl(0, 0%, 98%);
+    --popover: 0 0% 15%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: hsl(0, 0%, 91%);
     --primary: 0 0% 91%;
-
-    --primary-variant: hsl(0, 0%, 64%);
     --primary-variant: 0 0% 64%;
-
-    --primary-foreground: hsl(0, 0%, 9%);
     --primary-foreground: 0 0% 9%;
 
-    --secondary: hsl(0, 0%, 15%);
     --secondary: 0 0% 15%;
-
-    --secondary-foreground: hsl(0, 0%, 42%);
     --secondary-foreground: 0 0% 42%;
-
-    --secondary-highlight: hsl(0, 0%, 25%);
     --secondary-highlight: 0 0% 25%;
 
-    --neutral: hsl(0, 0%, 55.1%);
-    --neutral: 0 0% 55.1%;
+    --neutral: 0 0% 55%;
+    --neutral_variant: 0 0% 42%;
 
-    --neutral_variant: hsl(0, 0%, 42.2%);
-    --neutral_variant: 0 0% 42.2%;
-
-    --muted: hsl(0, 0%, 12%);
     --muted: 0 0% 12%;
-
-    --muted-foreground: hsl(0, 0%, 42%);
     --muted-foreground: 0 0% 42%;
 
-    --accent: hsl(0, 0%, 0%);
     --accent: 0 0% 0%;
+    --accent-foreground: 120 100% 50%;
 
-    --accent-foreground: hsl(0, 0%, 100%);
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: hsl(0, 62.8%, 30.6%);
     --destructive: 0 62.8% 30.6%;
-
-    --destructive-foreground: hsl(0, 100%, 83%);
     --destructive-foreground: 0 100% 83%;
 
-    --warning: hsl(17, 87%, 18%);
     --warning: 17 87% 18%;
-
-    --warning-foreground: hsl(32, 100%, 74%);
     --warning-foreground: 32 100% 74%;
 
-    --border: hsl(0, 0%, 32%);
     --border: 0 0% 32%;
-
-    --input: hsl(0, 0%, 5%);
     --input: 0 0% 25%;
 
-    --ring: hsla(0, 0%, 25%, 0%);
-    --ring: 0 0% 25% 0%;
+    --ring: 0 0% 25% / 0%;
+
+    --selected: 120 89% 35%;
+    --selected-foreground: 0 0% 100%;
+
+    --severity_alert: var(--red-800);
+    --severity_alert_dimmed: var(--red-500);
+
+    --severity_detection: var(--orange-600);
+    --severity_detection_dimmed: var(--orange-400);
+
+    --severity_significant_motion: var(--yellow-400);
+    --severity_significant_motion_dimmed: var(--yellow-200);
+
+    --motion_review: 44 94% 50%;
+    --motion_review_dimmed: 44 60% 40%;
+
+    --audio_review: 120 94% 35%;
   }
 }
