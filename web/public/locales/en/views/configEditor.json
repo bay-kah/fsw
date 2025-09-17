@@ -4,7 +4,7 @@
   "safeConfigEditor": "Config Editor (Safe Mode)",
   "safeModeDescription": "SenseWatch is in safe mode due to a config validation error.",
   "copyConfig": "Copy Config",
-  "saveAndRestart": "Save & Restart",
+  "saveAndRestart": "Save & Apply",
   "saveOnly": "Save Only",
   "confirm": "Exit without saving?",
   "toast": {
