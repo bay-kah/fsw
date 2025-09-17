@@ -1,11 +1,10 @@
 @layer base {
   :root {
-    --background: url('/web/images/wallpaper.png') repeat;
-    --background-size: auto;
-    --background-color: #000;
+    --background: hsl(120, 100%, 6.3%);
+    --background: 120 100% 6.3%;
 
-    --background-alt: hsl(0, 0%, 98.5%);
-    --background-alt: 0 0% 98.5%;
+    --background-alt: hsl(120, 100%, 8%);
+    --background-alt: 120 100% 8%;
 
     --foreground: hsl(120, 84%, 4.9%);
     --foreground: 120 84% 4.9%;
@@ -105,12 +104,11 @@
   }
 
   .dark {
-    --background: url('/web/images/wallpaper.png') repeat;
-    --background-size: auto;
-    --background-color: #000;
+    --background: hsl(120, 100%, 6.3%);
+    --background: 120 100% 6.3%;
 
-    --background-alt: hsl(0, 0, 9%);
-    --background-alt: 0 0% 9%;
+    --background-alt: hsl(120, 100%, 8%);
+    --background-alt: 120 100% 8%;
 
     --foreground: hsl(0, 0%, 100%);
     --foreground: 0, 0%, 100%;
