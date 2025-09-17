@@ -1,6 +1,6 @@
 {
   "restart": {
-    "title": "Are you sure you want to Apply any changes? Sensewatch will refresh.",
+    "title": "Are you sure you want to APPLY ANY CHANGES? Sensewatch will refresh.",
     "button": "Apply",
     "restarting": {
       "title": "SenseWatch is Applying Changes",
