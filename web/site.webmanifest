@@ -1,6 +1,6 @@
 {
-  "name": "Frigate",
-  "short_name": "Frigate",
+  "name": "SenseWatch",
+  "short_name": "SenseWatch",
   "start_url": "/BASE_PATH/",
   "icons": [
     {
@@ -28,7 +28,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#00ff00",
   "background_color": "#ffffff",
   "display": "standalone"
 }
