@@ -1,6 +1,6 @@
 @layer base {
   :root {
-    --background: hsl(120, 100%, 6.3%);
+    --background: hsl(117, 100%, 2%);
     --background: 120 100% 6.3%;
 
     --background-alt: hsl(120, 100%, 8%);
@@ -104,7 +104,7 @@
   }
 
   .dark {
-    --background: hsl(120, 100%, 6.3%);
+    --background: hsl(117, 100%, 2%);
     --background: 120 100% 6.3%;
 
     --background-alt: hsl(120, 100%, 8%);
