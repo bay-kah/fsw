@@ -136,9 +136,9 @@
       "title": "License Plate Recognition",
       "desc": "SenseWatch can recognize license plates on vehicles and automatically add the detected characters to the recognized_license_plate field or a known name as a sub_label to objects that are of type car. A common use case may be to read the license plates of cars pulling into a driveway or cars passing by on a street."
     },
-    "restart_required": "Apply settings via Left Menu-> Apply. (Enrichments settings changed)",
+    "restart_required": "Apply settings via Left Menu - Apply any changes. (Enrichments settings changed)",
     "toast": {
-      "success": "Enrichments settings have been saved. RApply settings via Left Menu-> Apply.",
+      "success": "Enrichments settings have been saved. Apply settings via Left Menu - Apply any changes.",
       "error": "Failed to save config changes: {{errorMessage}}"
     }
   },
@@ -180,7 +180,7 @@
       "selectDetectionsZones": "Select zones for Detections",
       "limitDetections": "Limit detections to specific zones",
       "toast": {
-        "success": "Review Classification configuration has been saved. RApply settings via Left Menu-> Apply."
+        "success": "Review Classification configuration has been saved. Apply settings via Left Menu - Apply any changes."
       }
     },
     "addCamera": "Add New Camera",
@@ -217,7 +217,7 @@
     "filter": {
       "all": "All Masks and Zones"
     },
-    "restart_required": "Apply settings via Left Menu-> Apply. (masks/zones changed)",
+    "restart_required": "Apply settings via Left Menu - Apply any changes. (masks/zones changed)",
     "toast": {
       "success": {
         "copyCoordinates": "Copied coordinates for {{polyName}} to clipboard."
@@ -327,7 +327,7 @@
         }
       },
       "toast": {
-        "success": "Zone ({{zoneName}}) has been saved. Apply settings via Left Menu-> Apply."
+        "success": "Zone ({{zoneName}}) has been saved. Apply settings via Left Menu - Apply any changes."
       }
     },
     "motionMasks": {
@@ -351,8 +351,8 @@
       },
       "toast": {
         "success": {
-          "title": "{{polygonName}} has been saved. Apply settings via Left Menu-> Apply.",
-          "noName": "Motion Mask has been saved. Apply settings via Left Menu-> Apply."
+          "title": "{{polygonName}} has been saved. Apply settings via Left Menu - Apply any changes.",
+          "noName": "Motion Mask has been saved. Apply settings via Left Menu - Apply any changes."
         }
       }
     },
@@ -376,8 +376,8 @@
       },
       "toast": {
         "success": {
-          "title": "{{polygonName}} has been saved. Apply settings via Left Menu-> Apply.",
-          "noName": "Object Mask has been saved. Apply settings via Left Menu-> Apply."
+          "title": "{{polygonName}} has been saved. Apply settings via Left Menu - Apply any changes.",
+          "noName": "Object Mask has been saved. Apply settings via Left Menu - Apply any changes."
         }
       }
     }
@@ -662,12 +662,12 @@
       "1hour": "Suspend for 1 hour",
       "12hours": "Suspend for 12 hours",
       "24hours": "Suspend for 24 hours",
-      "untilRestart": "Suspend until restart"
+      "untilRestart": "Suspend until apply or restart"
     },
     "cancelSuspension": "Cancel Suspension",
     "toast": {
       "success": {
-        "registered": "Successfully registered for notifications. Restarting SenseWatch is required before any notifications (including a test notification) can be sent.",
+        "registered": "Successfully registered for notifications. Applying these changes via Left Menu - Apply any changes is required before any notifications (including a test notification) can be sent.",
         "settingSaved": "Notification settings have been saved."
       },
       "error": {
@@ -714,7 +714,7 @@
     "unsavedChanges": "Unsaved Frigate+ settings changes",
     "restart_required": "Apply required (Frigate+ model changed)",
     "toast": {
-      "success": "Frigate+ settings have been saved. Apply settings via Left Menu-> Apply.",
+      "success": "Frigate+ settings have been saved. Apply settings via Left Menu - Apply any changes.",
       "error": "Failed to save config changes: {{errorMessage}}"
     }
   },

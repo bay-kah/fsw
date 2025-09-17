@@ -1,9 +1,9 @@
 {
   "restart": {
-    "title": "Are you sure you want to restart SenseWatch?",
-    "button": "Restart",
+    "title": "Are you sure you want to Apply any changes? Sensewatch will refresh.",
+    "button": "Apply",
     "restarting": {
-      "title": "SenseWatch is Restarting",
+      "title": "SenseWatch is Applying Changes",
       "content": "This page will reload in {{countdown}} seconds.",
       "button": "Force Reload Now"
     }
