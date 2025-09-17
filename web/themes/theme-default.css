@@ -1,7 +1,8 @@
 @layer base {
   :root {
-    --background: hsl(0, 0%, 100%);
-    --background: 0 0% 100%;
+    --background: url('/web/images/wallpaper.png') repeat;
+    --background-size: auto;
+    --background-color: #000;
 
     --background-alt: hsl(0, 0%, 98.5%);
     --background-alt: 0 0% 98.5%;
