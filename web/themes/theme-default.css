@@ -1,10 +1,10 @@
 @layer base {
   :root {
-  --background: hsl(0, 0%, 100%);
-  --background: 0 0% 100%;
+  --background: hsl(0, 4%, 87%);
+  --background: 0 4% 87%;
 
-  --background-alt: hsl(0, 0%, 98.5%);
-  --background-alt: 0 0% 98.5%;
+  --background-alt: hsl(0, 4%, 87%);
+  --background-alt: 0 4% 87%;
 
   --foreground: hsl(0, 0%, 0%);
   --foreground: 0 0% 0%;
@@ -30,8 +30,8 @@
   --primary-foreground: hsl(0, 0%, 100%);
   --primary-foreground: 0 0% 100%;
 
-  --secondary: hsl(131, 100%, 50%);
-  --secondary: 131 100% 50%;
+  --secondary: hsl(0, 0%, 0%);
+  --secondary: 0 0% 0%;
 
   --secondary-foreground: hsl(0, 0%, 0%);
   --secondary-foreground: 0 0% 0%;
@@ -51,8 +51,8 @@
   --muted-foreground: hsl(0, 0%, 0%);
   --muted-foreground: 0 0% 0%;
 
-  --accent: hsl(130, 100%, 30%);
-  --accent: 130 100% 30%;
+  --accent: hsl(130, 100%, 50%);
+  --accent: 130 100% 50%;
 
   --accent-foreground: hsl(0, 0%, 100%);
   --accent-foreground: 0 0% 100%;
