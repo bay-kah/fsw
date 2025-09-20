@@ -136,9 +136,9 @@
       "title": "License Plate Recognition",
       "desc": "SenseWatch can recognize license plates on vehicles and automatically add the detected characters to the recognized_license_plate field or a known name as a sub_label to objects that are of type car. A common use case may be to read the license plates of cars pulling into a driveway or cars passing by on a street."
     },
-    "restart_required": "Apply settings via Left Menu - Apply any changes. (Enrichments settings changed)",
+    "restart_required": "Apply settings via Gear Icon - Apply. (Enrichments settings changed)",
     "toast": {
-      "success": "Enrichments settings have been saved. Apply settings via Left Menu - Apply any changes.",
+      "success": "Enrichments settings have been saved. Apply settings via Gear Icon - Apply.",
       "error": "Failed to save config changes: {{errorMessage}}"
     }
   },
@@ -180,7 +180,7 @@
       "selectDetectionsZones": "Select zones for Detections",
       "limitDetections": "Limit detections to specific zones",
       "toast": {
-        "success": "Review Classification configuration has been saved. Apply settings via Left Menu - Apply any changes."
+        "success": "Review Classification configuration has been saved. Apply settings via Gear Icon - Apply."
       }
     },
     "addCamera": "Add New Camera",
@@ -217,7 +217,7 @@
     "filter": {
       "all": "All Masks and Zones"
     },
-    "restart_required": "Apply settings via Left Menu - Apply any changes. (masks/zones changed)",
+    "restart_required": "Apply settings via Gear Icon - Apply. (masks/zones changed)",
     "toast": {
       "success": {
         "copyCoordinates": "Copied coordinates for {{polyName}} to clipboard."
@@ -327,7 +327,7 @@
         }
       },
       "toast": {
-        "success": "Zone ({{zoneName}}) has been saved. Apply settings via Left Menu - Apply any changes."
+        "success": "Zone ({{zoneName}}) has been saved. Apply settings via Gear Icon - Apply."
       }
     },
     "motionMasks": {
@@ -351,8 +351,8 @@
       },
       "toast": {
         "success": {
-          "title": "{{polygonName}} has been saved. Apply settings via Left Menu - Apply any changes.",
-          "noName": "Motion Mask has been saved. Apply settings via Left Menu - Apply any changes."
+          "title": "{{polygonName}} has been saved. Apply settings via Gear Icon - Apply.",
+          "noName": "Motion Mask has been saved. Apply settings via Gear Icon - Apply."
         }
       }
     },
@@ -376,8 +376,8 @@
       },
       "toast": {
         "success": {
-          "title": "{{polygonName}} has been saved. Apply settings via Left Menu - Apply any changes.",
-          "noName": "Object Mask has been saved. Apply settings via Left Menu - Apply any changes."
+          "title": "{{polygonName}} has been saved. Apply settings via Gear Icon - Apply.",
+          "noName": "Object Mask has been saved. Apply settings via Gear Icon - Apply."
         }
       }
     }
@@ -667,7 +667,7 @@
     "cancelSuspension": "Cancel Suspension",
     "toast": {
       "success": {
-        "registered": "Successfully registered for notifications. Applying these changes via Left Menu - Apply any changes is required before any notifications (including a test notification) can be sent.",
+        "registered": "Successfully registered for notifications. Applying these changes is required before any notifications (including a test notification) can be sent.",
         "settingSaved": "Notification settings have been saved."
       },
       "error": {
@@ -714,7 +714,7 @@
     "unsavedChanges": "Unsaved Frigate+ settings changes",
     "restart_required": "Apply required (Frigate+ model changed)",
     "toast": {
-      "success": "Frigate+ settings have been saved. Apply settings via Left Menu - Apply any changes.",
+      "success": "Frigate+ settings have been saved. Apply settings via Gear Icon - Apply.",
       "error": "Failed to save config changes: {{errorMessage}}"
     }
   },

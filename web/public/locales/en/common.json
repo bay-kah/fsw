@@ -200,7 +200,7 @@
       "title": "Documentation",
       "label": "SenseWatch documentation"
     },
-    "restart": "Apply any changes",
+    "restart": "Apply",
     "live": {
       "title": "Live",
       "allCameras": "All Cameras",

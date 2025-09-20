@@ -1,11 +1,11 @@
 {
   "restart": {
-    "title": "Are you sure you want to APPLY ANY CHANGES? Sensewatch will refresh.",
+    "title": "Are you sure you want to apply? Sensewatch will refresh.",
     "button": "Apply",
     "restarting": {
-      "title": "SenseWatch is Applying Changes",
-      "content": "This page will reload in {{countdown}} seconds.",
-      "button": "Force Reload Now"
+      "title": "SenseWatch is applying changes",
+      "content": "This page will refresh in {{countdown}} seconds.",
+      "button": "Force Refresh Now"
     }
   },
   "explore": {

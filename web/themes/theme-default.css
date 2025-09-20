@@ -6,7 +6,7 @@
   --background-alt: hsl(0, 0%, 98.5%);
   --background-alt: 0 0% 98.5%;
 
-  --foreground: hsl(130, 100%, 30%);
+  --foreground: hsl(0, 0%, 0%);
   --foreground: 130 100% 30%;
 
   --card: hsl(0, 0%, 100%);
@@ -48,13 +48,13 @@
   --muted: hsl(130, 40%, 20%);
   --muted: 130 40% 20%;
 
-  --muted-foreground: hsl(130, 30%, 40%);
+  --muted-foreground: hsl(120, 1%, 15%);
   --muted-foreground: 130 30% 40%;
 
   --accent: hsl(130, 100%, 30%);
   --accent: 130 100% 30%;
 
-  --accent-foreground: hsl(130, 100%, 20%);
+  --accent-foreground: hsl(0, 0%, 100%);
   --accent-foreground: 130 100% 20%;
 
   --destructive: hsl(0, 84.2%, 60.2%);
@@ -66,7 +66,7 @@
   --warning: hsl(17, 87%, 18%);
   --warning: 17 87% 18%;
 
-  --warning-foreground: hsl(32, 100%, 74%);
+  --warning-foreground: hsl(0, 0%, 100%);
   --warning-foreground: 32 100% 74%;
 
   --border: hsl(130, 40%, 25%);
@@ -81,7 +81,7 @@
   --selected: hsl(130, 100%, 35%);
   --selected: 130 100% 35%;
 
-  --selected-foreground: hsl(0 0% 100%);
+  --selected-foreground: hsl(0, 0%, 100%);
   --selected-foreground: 0 0% 100%;
 
   --severity_alert: var(--red-800);
