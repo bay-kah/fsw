@@ -22,16 +22,16 @@
   --popover-foreground: 0 0% 0%;
 
   --primary: hsl(130, 100%, 50%);
-  --primary: 130 100% 20%;
+  --primary: 130 100% 50%;
 
-  --primary-variant: hsl(130, 100%, 35%);
-  --primary-variant: 130 100% 35%;
+  --primary-variant: hsl(130, 100%, 85%);
+  --primary-variant: 130 100% 85%;
 
   --primary-foreground: hsl(0, 0%, 100%);
   --primary-foreground: 0 0% 100%;
 
   --secondary: hsl(131, 100%, 50%);
-  --secondary: 130 40% 25%;
+  --secondary: 131 100% 50%;
 
   --secondary-foreground: hsl(0, 0%, 0%);
   --secondary-foreground: 0 0% 0%;
