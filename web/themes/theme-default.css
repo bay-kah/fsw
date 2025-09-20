@@ -21,7 +21,7 @@
   --popover-foreground: hsl(0, 0%, 0%);
   --popover-foreground: 0 0% 0%;
 
-  --primary: hsl(130, 100%, 20%);
+  --primary: hsl(130, 100%, 50%);
   --primary: 130 100% 20%;
 
   --primary-variant: hsl(130, 100%, 35%);
@@ -30,7 +30,7 @@
   --primary-foreground: hsl(0, 0%, 100%);
   --primary-foreground: 0 0% 100%;
 
-  --secondary: hsl(130, 40%, 25%);
+  --secondary: hsl(131, 100%, 50%);
   --secondary: 130 40% 25%;
 
   --secondary-foreground: hsl(0, 0%, 0%);
@@ -45,7 +45,7 @@
   --neutral_variant: hsl(0, 0%, 32.2%);
   --neutral_variant: 0 0% 32.2%;
 
-  --muted: hsl(130, 40%, 20%);
+  --muted: hsl(129, 100%, 17%);
   --muted: 130 40% 20%;
 
   --muted-foreground: hsl(0, 0%, 0%);
@@ -69,7 +69,7 @@
   --warning-foreground: hsl(0, 0%, 100%);
   --warning-foreground: 0 0% 100%;
 
-  --border: hsl(130, 40%, 25%);
+  --border: hsl(0, 0%, 0%);
   --border: 130 40% 25%;
 
   --input: hsl(0, 0%, 85%);
