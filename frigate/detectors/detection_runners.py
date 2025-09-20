@@ -101,6 +101,19 @@ class CudaGraphRunner(BaseModelRunner):
     for more complex models like CLIP or PaddleOCR.
     """
 
+    @staticmethod
+    def is_complex_model(model_type: str) -> bool:
+        # Import here to avoid circular imports
+        from frigate.detectors.detector_config import ModelTypeEnum
+        from frigate.embeddings.types import EnrichmentModelTypeEnum
+
+        return model_type in [
+            ModelTypeEnum.yolonas.value,
+            EnrichmentModelTypeEnum.paddleocr.value,
+            EnrichmentModelTypeEnum.jina_v1.value,
+            EnrichmentModelTypeEnum.jina_v2.value,
+        ]
+
     def __init__(self, session: ort.InferenceSession, cuda_device_id: int):
         self._session = session
         self._cuda_device_id = cuda_device_id
@@ -156,9 +169,17 @@ class CudaGraphRunner(BaseModelRunner):
 class OpenVINOModelRunner(BaseModelRunner):
     """OpenVINO model runner that handles inference efficiently."""
 
-    def __init__(self, model_path: str, device: str, **kwargs):
+    @staticmethod
+    def is_complex_model(model_type: str) -> bool:
+        # Import here to avoid circular imports
+        from frigate.embeddings.types import EnrichmentModelTypeEnum
+
+        return model_type in [EnrichmentModelTypeEnum.paddleocr.value]
+
+    def __init__(self, model_path: str, device: str, model_type: str, **kwargs):
         self.model_path = model_path
         self.device = device
+        self.complex_model = OpenVINOModelRunner.is_complex_model(model_type)
 
         if not os.path.isfile(model_path):
             raise FileNotFoundError(f"OpenVINO model file {model_path} not found.")
@@ -180,14 +201,16 @@ class OpenVINOModelRunner(BaseModelRunner):
 
         # Create reusable inference request
         self.infer_request = self.compiled_model.create_infer_request()
+        self.input_tensor: ov.Tensor | None = None
 
-        try:
-            input_shape = self.compiled_model.inputs[0].get_shape()
-            input_element_type = self.compiled_model.inputs[0].get_element_type()
-            self.input_tensor = ov.Tensor(input_element_type, input_shape)
-        except RuntimeError:
-            # model is complex and has dynamic shape
-            self.input_tensor = None
+        if not self.complex_model:
+            try:
+                input_shape = self.compiled_model.inputs[0].get_shape()
+                input_element_type = self.compiled_model.inputs[0].get_element_type()
+                self.input_tensor = ov.Tensor(input_element_type, input_shape)
+            except RuntimeError:
+                # model is complex and has dynamic shape
+                pass
 
     def get_input_names(self) -> list[str]:
         """Get input names for the model."""
@@ -195,9 +218,24 @@ class OpenVINOModelRunner(BaseModelRunner):
 
     def get_input_width(self) -> int:
         """Get the input width of the model."""
-        input_shape = self.compiled_model.inputs[0].get_shape()
-        # Assuming NCHW format, width is the last dimension
-        return int(input_shape[-1])
+        input_info = self.compiled_model.inputs
+        first_input = input_info[0]
+
+        try:
+            partial_shape = first_input.get_partial_shape()
+            # width dimension
+            if len(partial_shape) >= 4 and partial_shape[3].is_static:
+                return partial_shape[3].get_length()
+
+            # If width is dynamic or we can't determine it
+            return -1
+        except Exception:
+            try:
+                # gemini says some ov versions might still allow this
+                input_shape = first_input.shape
+                return input_shape[3] if len(input_shape) >= 4 else -1
+            except Exception:
+                return -1
 
     def run(self, inputs: dict[str, Any]) -> list[np.ndarray]:
         """Run inference with the model.
@@ -219,6 +257,15 @@ class OpenVINOModelRunner(BaseModelRunner):
             np.copyto(self.input_tensor.data, input_data)
             self.infer_request.infer(self.input_tensor)
         else:
+            if self.complex_model:
+                try:
+                    # This ensures the model starts with a clean state for each sequence
+                    # Important for RNN models like PaddleOCR recognition
+                    self.infer_request.reset_state()
+                except Exception:
+                    # this will raise an exception for models with AUTO set as the device
+                    pass
+
             # Multiple inputs case - set each input by name
             for input_name, input_data in inputs.items():
                 # Find the input by name
@@ -354,26 +401,46 @@ class RKNNModelRunner(BaseModelRunner):
 
 
 def get_optimized_runner(
-    model_path: str, device: str, complex_model: bool = True, **kwargs
+    model_path: str, device: str | None, model_type: str, **kwargs
 ) -> BaseModelRunner:
     """Get an optimized runner for the hardware."""
+    device = device or "AUTO"
     if is_rknn_compatible(model_path):
         rknn_path = auto_convert_model(model_path)
 
         if rknn_path:
             return RKNNModelRunner(rknn_path)
 
-    if device != "CPU" and is_openvino_gpu_npu_available():
-        return OpenVINOModelRunner(model_path, device, **kwargs)
-
     providers, options = get_ort_providers(device == "CPU", device, **kwargs)
-    ortSession = ort.InferenceSession(
-        model_path,
-        providers=providers,
-        provider_options=options,
+
+    if providers[0] == "CPUExecutionProvider":
+        # In the default image, ONNXRuntime is used so we will only get CPUExecutionProvider
+        # In other images we will get CUDA / ROCm which are preferred over OpenVINO
+        # There is currently no way to prioritize OpenVINO over CUDA / ROCm in these images
+        if device != "CPU" and is_openvino_gpu_npu_available():
+            return OpenVINOModelRunner(model_path, device, model_type, **kwargs)
+
+    if (
+        not CudaGraphRunner.is_complex_model(model_type)
+        and providers[0] == "CUDAExecutionProvider"
+    ):
+        options[0] = {
+            **options[0],
+            "enable_cuda_graph": True,
+        }
+        return CudaGraphRunner(
+            ort.InferenceSession(
+                model_path,
+                providers=providers,
+                provider_options=options,
+            ),
+            options[0]["device_id"],
+        )
+
+    return ONNXModelRunner(
+        ort.InferenceSession(
+            model_path,
+            providers=providers,
+            provider_options=options,
+        )
     )
-
-    if not complex_model and providers[0] == "CUDAExecutionProvider":
-        return CudaGraphRunner(ortSession, options[0]["device_id"])
-
-    return ONNXModelRunner(ortSession)

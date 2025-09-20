@@ -8,6 +8,7 @@ import numpy as np
 from frigate.comms.inter_process import InterProcessRequestor
 from frigate.const import MODEL_CACHE_DIR
 from frigate.detectors.detection_runners import BaseModelRunner, get_optimized_runner
+from frigate.embeddings.types import EnrichmentModelTypeEnum
 from frigate.types import ModelStatusTypesEnum
 from frigate.util.downloader import ModelDownloader
 
@@ -32,7 +33,7 @@ class PaddleOCRDetection(BaseEmbedding):
         device: str = "AUTO",
     ):
         model_file = (
-            "detection_v5-large.onnx"
+            "detection_v3-large.onnx"
             if model_size == "large"
             else "detection_v5-small.onnx"
         )
@@ -40,7 +41,7 @@ class PaddleOCRDetection(BaseEmbedding):
             model_name="paddleocr-onnx",
             model_file=model_file,
             download_urls={
-                model_file: f"https://github.com/hawkeye217/paddleocr-onnx/raw/refs/heads/master/models/v5/{model_file}"
+                model_file: f"https://github.com/hawkeye217/paddleocr-onnx/raw/refs/heads/master/models/{'v3' if model_size == 'large' else 'v5'}/{model_file}"
             },
         )
         self.requestor = requestor
@@ -79,6 +80,7 @@ class PaddleOCRDetection(BaseEmbedding):
             self.runner = get_optimized_runner(
                 os.path.join(self.download_path, self.model_file),
                 self.device,
+                model_type=EnrichmentModelTypeEnum.paddleocr.value,
             )
 
     def _preprocess_inputs(self, raw_inputs):
@@ -138,6 +140,7 @@ class PaddleOCRClassification(BaseEmbedding):
             self.runner = get_optimized_runner(
                 os.path.join(self.download_path, self.model_file),
                 self.device,
+                model_type=EnrichmentModelTypeEnum.paddleocr.value,
             )
 
     def _preprocess_inputs(self, raw_inputs):
@@ -198,6 +201,7 @@ class PaddleOCRRecognition(BaseEmbedding):
             self.runner = get_optimized_runner(
                 os.path.join(self.download_path, self.model_file),
                 self.device,
+                model_type=EnrichmentModelTypeEnum.paddleocr.value,
             )
 
     def _preprocess_inputs(self, raw_inputs):
@@ -258,7 +262,7 @@ class LicensePlateDetector(BaseEmbedding):
             self.runner = get_optimized_runner(
                 os.path.join(self.download_path, self.model_file),
                 self.device,
-                complex_model=False,
+                model_type="yolov9",
             )
 
     def _preprocess_inputs(self, raw_inputs):
