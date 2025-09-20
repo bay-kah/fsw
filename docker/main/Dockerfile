@@ -338,3 +338,6 @@ FROM deps AS frigate
 
 WORKDIR /opt/frigate/
 COPY --from=rootfs / /
+# Add version file so Python import works
+ARG VERSION=0.16.1-custom
+RUN echo "VERSION = \"${VERSION}\"" > /opt/frigate/frigate/version.py
