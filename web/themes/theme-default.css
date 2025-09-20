@@ -45,8 +45,8 @@
   --neutral_variant: hsl(0, 0%, 32.2%);
   --neutral_variant: 0 0% 32.2%;
 
-  --muted: hsl(129, 100%, 17%);
-  --muted: 130 40% 20%;
+  --muted: hsl(130, 19%, 87%);
+  --muted: 130 19% 87%;
 
   --muted-foreground: hsl(0, 0%, 0%);
   --muted-foreground: 0 0% 0%;
