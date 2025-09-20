@@ -241,7 +241,7 @@ export default function LivePlayer({
     player = (
       <WebRtcPlayer
         key={"webrtc_" + key}
-        className={`size-full rounded-lg md:rounded-2xl ${liveReady ? "" : "hidden"}`}
+        className={`size-full rounded-sm md:rounded-2xl ${liveReady ? "" : "hidden"}`}
         camera={streamName}
         playbackEnabled={cameraActive || liveReady}
         getStats={showStats}
@@ -260,7 +260,7 @@ export default function LivePlayer({
       player = (
         <MSEPlayer
           key={"mse_" + key}
-          className={`size-full rounded-lg md:rounded-2xl ${liveReady ? "" : "hidden"}`}
+          className={`size-full rounded-sm md:rounded-2xl ${liveReady ? "" : "hidden"}`}
           camera={streamName}
           playbackEnabled={cameraActive || liveReady}
           audioEnabled={playAudio}
@@ -286,7 +286,7 @@ export default function LivePlayer({
       player = (
         <JSMpegPlayer
           key={"jsmpeg_" + key}
-          className="flex justify-center overflow-hidden rounded-lg md:rounded-2xl"
+          className="flex justify-center overflow-hidden rounded-sm md:rounded-2xl"
           camera={cameraConfig.name}
           width={cameraConfig.detect.width}
           height={cameraConfig.detect.height}
@@ -329,8 +329,8 @@ export default function LivePlayer({
       {cameraEnabled &&
         ((showStillWithoutActivity && !liveReady) || liveReady) && (
           <>
-            <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[30%] w-full rounded-lg bg-gradient-to-b from-black/20 to-transparent md:rounded-2xl"></div>
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[10%] w-full rounded-lg bg-gradient-to-t from-black/20 to-transparent md:rounded-2xl"></div>
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[30%] w-full rounded-sm bg-gradient-to-b from-black/20 to-transparent md:rounded-2xl"></div>
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[10%] w-full rounded-sm bg-gradient-to-t from-black/20 to-transparent md:rounded-2xl"></div>
           </>
         )}
       {player}
@@ -407,7 +407,7 @@ export default function LivePlayer({
 
       {offline && !showStillWithoutActivity && cameraEnabled && (
         <div className="absolute inset-0 left-1/2 top-1/2 flex h-96 w-96 -translate-x-1/2 -translate-y-1/2">
-          <div className="flex flex-col items-center justify-center rounded-lg bg-background/50 p-5">
+          <div className="flex flex-col items-center justify-center rounded-sm bg-background/50 p-5">
             <p className="my-5 text-lg">{t("streamOffline.title")}</p>
             <TbExclamationCircle className="mb-3 size-10" />
             <p className="max-w-96 text-center">
@@ -426,7 +426,7 @@ export default function LivePlayer({
 
       {!cameraEnabled && (
         <div className="relative flex h-full w-full items-center justify-center rounded-2xl border border-secondary-foreground bg-background_alt">
-          <div className="flex h-32 flex-col items-center justify-center rounded-lg p-4 md:h-48 md:w-48">
+          <div className="flex h-32 flex-col items-center justify-center rounded-sm p-4 md:h-48 md:w-48">
             <LuVideoOff className="mb-2 size-8 md:size-10" />
             <p className="max-w-32 text-center text-sm md:max-w-40 md:text-base">
               {t("cameraDisabled")}
