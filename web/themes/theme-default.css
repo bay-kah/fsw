@@ -3,8 +3,8 @@
   --background: hsl(0, 0%, 100%);
   --background: 0 0% 100%;
 
-  --background-alt: hsl(0, 2%, 11%);
-  --background-alt: 0 2% 11%;
+  --background-alt: hsl(0, 0%, 21%);
+  --background-alt: 0 2% 21%;
 
   --foreground: hsl(0, 0%, 0%);
   --foreground: 0 0% 0%;
@@ -30,8 +30,8 @@
   --primary-foreground: hsl(0, 0%, 100%);
   --primary-foreground: 0 0% 100%;
 
-  --secondary: hsl(0, 0%, 0%);
-  --secondary: 0 0% 0%;
+  --secondary: hsl(0, 0%, 10%);
+  --secondary: 0 0% 10%;
 
   --secondary-foreground: hsl(125, 100%, 50%);
   --secondary-foreground: 125 100% 50%;
