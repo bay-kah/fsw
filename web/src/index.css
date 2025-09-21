@@ -1,3 +1,4 @@
+
 @import "/themes/tailwind-base.css";
 @import "/themes/theme-default.css";
 @import "/themes/theme-blue.css";
@@ -9,10 +10,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-#player-container * {
-  border-radius: 0 !important;
-}
 
 /* Duplicated var names with color space modifiers for swatches in vscode. See https://github.com/tailwindlabs/tailwindcss/discussions/10619 */
 
