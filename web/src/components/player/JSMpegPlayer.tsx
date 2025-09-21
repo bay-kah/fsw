@@ -232,7 +232,7 @@ export default function JSMpegPlayer({
         >
           <canvas
             ref={canvasRef}
-            className="rounded-sm md:rounded-2xl"
+            className="rounded-sm md:rounded-sm"
             style={{
               width: scaledWidth,
               height: scaledHeight,

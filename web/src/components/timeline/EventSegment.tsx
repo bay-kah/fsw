@@ -249,11 +249,11 @@ export function EventSegment({
               </HoverCardTrigger>
               <HoverCardPortal>
                 <HoverCardContent
-                  className="w-[250px] rounded-lg p-2 md:rounded-2xl"
+                  className="w-[250px] rounded-sm p-2 md:rounded-sm"
                   side="left"
                 >
                   <img
-                    className="rounded-lg"
+                    className="rounded-sm"
                     src={`${apiHost}${eventThumbnail.replace("/media/frigate/", "")}`}
                   />
                 </HoverCardContent>

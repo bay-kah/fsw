@@ -234,7 +234,7 @@ export default function PolygonItem({
 
       <div
         key={index}
-        className="transition-background my-1.5 flex flex-row items-center justify-between rounded-lg p-1 duration-100"
+        className="transition-background my-1.5 flex flex-row items-center justify-between rounded-sm p-1 duration-100"
         data-index={index}
         onMouseEnter={() => setHoveredPolygonIndex(index)}
         onMouseLeave={() => setHoveredPolygonIndex(null)}

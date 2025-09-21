@@ -81,7 +81,7 @@ export default function PolygonEditControls({
         <TooltipTrigger asChild>
           <Button
             variant="default"
-            className="size-6 rounded-md p-1"
+            className="size-6 rounded-sm p-1"
             aria-label={t("masksAndZones.form.polygonDrawing.removeLastPoint")}
             disabled={!polygons[activePolygonIndex].points.length}
             onClick={undo}
@@ -97,7 +97,7 @@ export default function PolygonEditControls({
         <TooltipTrigger asChild>
           <Button
             variant="default"
-            className="size-6 rounded-md p-1"
+            className="size-6 rounded-sm p-1"
             aria-label={t("masksAndZones.form.polygonDrawing.reset.label")}
             disabled={!polygons[activePolygonIndex].points.length}
             onClick={reset}
@@ -111,7 +111,7 @@ export default function PolygonEditControls({
         <TooltipTrigger asChild>
           <Button
             variant={snapPoints ? "select" : "default"}
-            className={cn("size-6 rounded-md p-1")}
+            className={cn("size-6 rounded-sm p-1")}
             aria-label={t("masksAndZones.form.polygonDrawing.snapPoints.true")}
             onClick={() => setSnapPoints((prev) => !prev)}
           >

@@ -30,7 +30,7 @@ export default function BirdseyeLivePlayer({
   if (liveMode == "webrtc") {
     player = (
       <WebRtcPlayer
-        className={`size-full rounded-sm md:rounded-2xl`}
+        className={`size-full rounded-sm md:rounded-sm`}
         camera="birdseye"
         pip={pip}
       />
@@ -39,7 +39,7 @@ export default function BirdseyeLivePlayer({
     if ("MediaSource" in window || "ManagedMediaSource" in window) {
       player = (
         <MSEPlayer
-          className={`size-full rounded-sm md:rounded-2xl`}
+          className={`size-full rounded-sm md:rounded-sm`}
           camera="birdseye"
           pip={pip}
         />
@@ -54,7 +54,7 @@ export default function BirdseyeLivePlayer({
   } else if (liveMode == "jsmpeg") {
     player = (
       <JSMpegPlayer
-        className="flex size-full justify-center overflow-hidden rounded-sm md:rounded-2xl"
+        className="flex size-full justify-center overflow-hidden rounded-sm md:rounded-sm"
         camera="birdseye"
         width={birdseyeConfig.width}
         height={birdseyeConfig.height}
@@ -76,8 +76,8 @@ export default function BirdseyeLivePlayer({
       )}
       onClick={onClick}
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[30%] w-full rounded-sm bg-gradient-to-b from-black/20 to-transparent md:rounded-2xl"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[10%] w-full rounded-sm bg-gradient-to-t from-black/20 to-transparent md:rounded-2xl"></div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[30%] w-full rounded-sm bg-gradient-to-b from-black/20 to-transparent md:rounded-sm"></div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[10%] w-full rounded-sm bg-gradient-to-t from-black/20 to-transparent md:rounded-sm"></div>
       <div className="size-full" ref={playerRef}>
         {player}
       </div>
