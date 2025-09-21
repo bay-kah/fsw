@@ -10,6 +10,10 @@
 @tailwind components;
 @tailwind utilities;
 
+video {
+  border-radius: 0 !important;
+}
+
 /* Duplicated var names with color space modifiers for swatches in vscode. See https://github.com/tailwindlabs/tailwindcss/discussions/10619 */
 
 @layer base {
