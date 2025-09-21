@@ -459,7 +459,7 @@ export default function LiveCameraView({
               className={`flex items-center gap-2 ${isMobile ? "landscape:flex-col" : ""}`}
             >
               <Button
-                className={`flex items-center gap-2.5 rounded-lg`}
+                className={`flex items-center gap-2.5 rounded-sm`}
                 aria-label={t("label.back", { ns: "common" })}
                 size="sm"
                 onClick={() => navigate(-1)}
@@ -472,7 +472,7 @@ export default function LiveCameraView({
                 )}
               </Button>
               <Button
-                className="flex items-center gap-2.5 rounded-lg"
+                className="flex items-center gap-2.5 rounded-sm"
                 aria-label={t("history.label")}
                 size="sm"
                 onClick={() => {
@@ -501,7 +501,7 @@ export default function LiveCameraView({
           )}
           <TooltipProvider>
             <div
-              className={`flex flex-row items-center gap-2 *:rounded-lg ${isMobile ? "landscape:flex-col" : ""}`}
+              className={`flex flex-row items-center gap-2 *:rounded-sm ${isMobile ? "landscape:flex-col" : ""}`}
             >
               {fullscreen && (
                 <Button
@@ -663,7 +663,7 @@ export default function LiveCameraView({
             transcription != null && (
               <div
                 ref={transcriptionRef}
-                className="text-md scrollbar-container absolute bottom-4 left-1/2 max-h-[15vh] w-[75%] -translate-x-1/2 overflow-y-auto rounded-lg bg-black/70 p-2 text-white md:w-[50%]"
+                className="text-md scrollbar-container absolute bottom-4 left-1/2 max-h-[15vh] w-[75%] -translate-x-1/2 overflow-y-auto rounded-sm bg-black/70 p-2 text-white md:w-[50%]"
               >
                 {transcription}
               </div>
@@ -1337,7 +1337,7 @@ function FrigateCameraFeatures({
           <DropdownMenuTrigger>
             <div
               className={cn(
-                "flex flex-col items-center justify-center rounded-lg bg-secondary p-2 text-secondary-foreground md:p-0",
+                "flex flex-col items-center justify-center rounded-sm bg-secondary p-2 text-secondary-foreground md:p-0",
               )}
             >
               <FaCog
@@ -1520,7 +1520,7 @@ function FrigateCameraFeatures({
                           </p>
                         </div>
                         <Button
-                          className={`flex items-center gap-2.5 rounded-lg`}
+                          className={`flex items-center gap-2.5 rounded-sm`}
                           aria-label={t("stream.lowBandwidth.resetStream")}
                           variant="outline"
                           size="sm"
@@ -1617,7 +1617,7 @@ function FrigateCameraFeatures({
           title={t("cameraSettings.title", { camera })}
         />
       </DrawerTrigger>
-      <DrawerContent className="rounded-2xl px-2 py-4">
+      <DrawerContent className="rounded-sm px-2 py-4">
         <div className="mt-2 flex flex-col gap-2">
           {isAdmin && (
             <>
@@ -1844,7 +1844,7 @@ function FrigateCameraFeatures({
                     <p className="text-sm">{t("stream.lowBandwidth.tips")}</p>
                   </div>
                   <Button
-                    className={`flex items-center gap-2.5 rounded-lg`}
+                    className={`flex items-center gap-2.5 rounded-sm`}
                     aria-label={t("stream.lowBandwidth.resetStream")}
                     variant="outline"
                     size="sm"

@@ -467,7 +467,7 @@ export function RecordingView({
         )}
         <div className={cn("flex items-center gap-2")}>
           <Button
-            className="flex items-center gap-2.5 rounded-lg"
+            className="flex items-center gap-2.5 rounded-sm"
             aria-label={t("label.back", { ns: "common" })}
             size="sm"
             onClick={() => navigate(-1)}
@@ -480,7 +480,7 @@ export function RecordingView({
             )}
           </Button>
           <Button
-            className="flex items-center gap-2.5 rounded-lg"
+            className="flex items-center gap-2.5 rounded-sm"
             aria-label="Go to the main camera live view"
             size="sm"
             onClick={() => {
@@ -551,7 +551,7 @@ export function RecordingView({
           )}
           {isDesktop ? (
             <ToggleGroup
-              className="*:rounded-md *:px-3 *:py-4"
+              className="*:rounded-sm *:px-3 *:py-4"
               type="single"
               size="sm"
               value={timelineType}

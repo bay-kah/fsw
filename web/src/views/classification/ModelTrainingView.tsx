@@ -305,7 +305,7 @@ export default function ModelTrainingView({ model }: ModelTrainingViewProps) {
       <div className="flex flex-row justify-between gap-2 p-2 align-middle">
         <div className="flex flex-row items-center justify-center gap-2">
           <Button
-            className="flex items-center gap-2.5 rounded-lg"
+            className="flex items-center gap-2.5 rounded-sm"
             aria-label={t("label.back", { ns: "common" })}
             onClick={() => navigate(-1)}
           >
@@ -331,7 +331,7 @@ export default function ModelTrainingView({ model }: ModelTrainingViewProps) {
               <div className="p-1">{`${selectedImages.length} selected`}</div>
               <div className="p-1">{"|"}</div>
               <div
-                className="cursor-pointer p-2 text-primary hover:rounded-lg hover:bg-secondary"
+                className="cursor-pointer p-2 text-primary hover:rounded-sm hover:bg-secondary"
                 onClick={() => setSelectedImages([])}
               >
                 {t("button.unselect", { ns: "common" })}
@@ -341,7 +341,7 @@ export default function ModelTrainingView({ model }: ModelTrainingViewProps) {
               className="flex gap-2"
               onClick={() => setDeleteDialogOpen(selectedImages)}
             >
-              <LuTrash2 className="size-7 rounded-md p-1 text-secondary-foreground" />
+              <LuTrash2 className="size-7 rounded-sm p-1 text-secondary-foreground" />
               {isDesktop && t("button.deleteImages")}
             </Button>
           </div>
@@ -606,7 +606,7 @@ function DatasetGrid({
       {classData.map((image) => (
         <div
           className={cn(
-            "flex w-60 cursor-pointer flex-col gap-2 rounded-lg bg-card outline outline-[3px]",
+            "flex w-60 cursor-pointer flex-col gap-2 rounded-sm bg-card outline outline-[3px]",
             selectedImages.includes(image)
               ? "shadow-selected outline-selected"
               : "outline-transparent duration-500",
@@ -626,11 +626,11 @@ function DatasetGrid({
             )}
           >
             <img
-              className="rounded-lg"
+              className="rounded-sm"
               src={`${baseUrl}clips/${modelName}/dataset/${categoryName}/${image}`}
             />
           </div>
-          <div className="rounded-b-lg bg-card p-3">
+          <div className="rounded-b-sm bg-card p-3">
             <div className="flex w-full flex-row items-center justify-between gap-2">
               <div className="flex w-full flex-row items-start justify-end gap-5 md:gap-4">
                 <Tooltip>
@@ -735,7 +735,7 @@ function TrainGrid({
         <div
           key={data.timestamp}
           className={cn(
-            "flex w-56 cursor-pointer flex-col gap-2 rounded-lg bg-card outline outline-[3px]",
+            "flex w-56 cursor-pointer flex-col gap-2 rounded-sm bg-card outline outline-[3px]",
             selectedImages.includes(data.raw)
               ? "shadow-selected outline-selected"
               : "outline-transparent duration-500",

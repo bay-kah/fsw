@@ -266,7 +266,7 @@ export default function EventView({
           <Logo className="absolute inset-x-1/2 h-8 -translate-x-1/2" />
         )}
         <ToggleGroup
-          className="*:rounded-md *:px-3 *:py-4"
+          className="*:rounded-sm *:px-3 *:py-4"
           type="single"
           size="sm"
           value={severityToggle}
@@ -336,7 +336,7 @@ export default function EventView({
           </ToggleGroupItem>
           <ToggleGroupItem
             className={cn(
-              "rounded-lg px-3 py-4",
+              "rounded-sm px-3 py-4",
               severityToggle != "significant_motion" && "text-muted-foreground",
             )}
             value="significant_motion"
@@ -735,9 +735,9 @@ function DetectionReview({
                       alignStartDateToTimeline(value.start_time) -
                       zoomSettings.segmentDuration
                     }
-                    className="review-item relative rounded-lg"
+                    className="review-item relative rounded-sm"
                   >
-                    <div className="aspect-video overflow-hidden rounded-lg">
+                    <div className="aspect-video overflow-hidden rounded-sm">
                       <PreviewThumbnailPlayer
                         review={value}
                         allPreviews={relevantPreviews}
@@ -760,7 +760,7 @@ function DetectionReview({
                     </div>
                     <div
                       className={cn(
-                        "review-item-ring pointer-events-none absolute inset-0 z-10 size-full rounded-lg outline outline-[3px] -outline-offset-[2.8px]",
+                        "review-item-ring pointer-events-none absolute inset-0 z-10 size-full rounded-sm outline outline-[3px] -outline-offset-[2.8px]",
                         selected
                           ? `outline-severity_${value.severity} shadow-severity_${value.severity}`
                           : "outline-transparent duration-500",
@@ -1097,7 +1097,7 @@ function MotionReview({
                 {motionData ? (
                   <>
                     <PreviewPlayer
-                      className={`rounded-lg md:rounded-2xl ${spans} ${grow}`}
+                      className={`rounded-sm md:rounded-sm ${spans} ${grow}`}
                       camera={camera.name}
                       timeRange={currentTimeRange}
                       startTime={previewStart}
@@ -1118,12 +1118,12 @@ function MotionReview({
                       }
                     />
                     <div
-                      className={`review-item-ring pointer-events-none absolute inset-0 z-20 size-full rounded-lg outline outline-[3px] -outline-offset-[2.8px] ${detectionType ? `outline-severity_${detectionType} shadow-severity_${detectionType}` : "outline-transparent duration-500"}`}
+                      className={`review-item-ring pointer-events-none absolute inset-0 z-20 size-full rounded-sm outline outline-[3px] -outline-offset-[2.8px] ${detectionType ? `outline-severity_${detectionType} shadow-severity_${detectionType}` : "outline-transparent duration-500"}`}
                     />
                   </>
                 ) : (
                   <Skeleton
-                    className={`size-full rounded-lg md:rounded-2xl ${spans} ${grow}`}
+                    className={`size-full rounded-sm md:rounded-sm ${spans} ${grow}`}
                   />
                 )}
               </div>

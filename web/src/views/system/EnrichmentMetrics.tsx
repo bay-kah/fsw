@@ -117,7 +117,7 @@ export default function EnrichmentMetrics({
           {statsHistory.length != 0 ? (
             <>
               {embeddingInferenceTimeSeries.map((series) => (
-                <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+                <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
                   <div className="mb-5 smart-capitalize">{series.name}</div>
                   {series.name.endsWith("Speed") ? (
                     <ThresholdBarGraph
@@ -143,7 +143,7 @@ export default function EnrichmentMetrics({
               ))}
             </>
           ) : (
-            <Skeleton className="aspect-video w-full rounded-lg md:rounded-2xl" />
+            <Skeleton className="aspect-video w-full rounded-sm md:rounded-sm" />
           )}
         </div>
       </div>

@@ -164,7 +164,7 @@ export default function ObjectSettingsView({
   return (
     <div className="flex size-full flex-col md:flex-row">
       <Toaster position="top-center" closeButton={true} />
-      <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-lg border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0 md:w-3/12">
+      <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-sm border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0 md:w-3/12">
         <Heading as="h3" className="my-2">
           {t("debug.title")}
         </Heading>
@@ -354,7 +354,7 @@ export default function ObjectSettingsView({
           </div>
         </div>
       ) : (
-        <Skeleton className="size-full rounded-lg md:rounded-2xl" />
+        <Skeleton className="size-full rounded-sm md:rounded-sm" />
       )}
     </div>
   );
@@ -395,7 +395,7 @@ function ObjectList({ cameraConfig, objects }: ObjectListProps) {
               <div className="flex flex-row items-center gap-3 pb-1">
                 <div className="flex flex-1 flex-row items-center justify-start p-3 pl-1">
                   <div
-                    className="rounded-lg p-2"
+                    className="rounded-sm p-2"
                     style={{
                       backgroundColor: obj.stationary
                         ? "rgb(110,110,110)"
@@ -489,7 +489,7 @@ function AudioList({ cameraConfig, audioDetections }: AudioListProps) {
           <Card className="mb-1 p-2 text-sm" key={obj.id ?? key}>
             <div className="flex flex-row items-center gap-3 pb-1">
               <div className="flex flex-1 flex-row items-center justify-start p-3 pl-1">
-                <div className="rounded-lg bg-selected p-2">
+                <div className="rounded-sm bg-selected p-2">
                   {getIconForLabel(key, "size-5 text-white")}
                 </div>
                 <div className="ml-3 text-lg">{getTranslatedLabel(key)}</div>

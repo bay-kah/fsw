@@ -513,7 +513,7 @@ export default function GeneralMetrics({
           )}
         >
           {statsHistory.length != 0 ? (
-            <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+            <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
               <div className="mb-5">{t("general.detector.inferenceSpeed")}</div>
               {detInferenceTimeSeries.map((series) => (
                 <ThresholdBarGraph
@@ -528,12 +528,12 @@ export default function GeneralMetrics({
               ))}
             </div>
           ) : (
-            <Skeleton className="aspect-video w-full rounded-lg md:rounded-2xl" />
+            <Skeleton className="aspect-video w-full rounded-sm md:rounded-sm" />
           )}
           {statsHistory.length != 0 && (
             <>
               {detTempSeries && (
-                <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+                <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
                   <div className="mb-5">
                     {t("general.detector.temperature")}
                   </div>
@@ -553,7 +553,7 @@ export default function GeneralMetrics({
             </>
           )}
           {statsHistory.length != 0 ? (
-            <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+            <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
               <div className="mb-5 flex flex-row items-center justify-between">
                 {t("general.detector.cpuUsage")}
                 <Popover>
@@ -591,7 +591,7 @@ export default function GeneralMetrics({
             <Skeleton className="aspect-video w-full" />
           )}
           {statsHistory.length != 0 ? (
-            <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+            <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
               <div className="mb-5">{t("general.detector.memoryUsage")}</div>
               {detMemSeries.map((series) => (
                 <ThresholdBarGraph
@@ -638,7 +638,7 @@ export default function GeneralMetrics({
               {statsHistory[0]?.gpu_usages && (
                 <>
                   {statsHistory.length != 0 ? (
-                    <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+                    <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
                       <div className="mb-5">
                         {t("general.hardwareInfo.gpuUsage")}
                       </div>
@@ -660,7 +660,7 @@ export default function GeneralMetrics({
                   {statsHistory.length != 0 ? (
                     <>
                       {gpuMemSeries && (
-                        <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+                        <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
                           <div className="mb-5">
                             {t("general.hardwareInfo.gpuMemory")}
                           </div>
@@ -684,7 +684,7 @@ export default function GeneralMetrics({
                   {statsHistory.length != 0 ? (
                     <>
                       {gpuEncSeries && gpuEncSeries?.length != 0 && (
-                        <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+                        <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
                           <div className="mb-5">
                             {t("general.hardwareInfo.gpuEncoder")}
                           </div>
@@ -708,7 +708,7 @@ export default function GeneralMetrics({
                   {statsHistory.length != 0 ? (
                     <>
                       {gpuDecSeries && gpuDecSeries?.length != 0 && (
-                        <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+                        <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
                           <div className="mb-5">
                             {t("general.hardwareInfo.gpuDecoder")}
                           </div>
@@ -736,7 +736,7 @@ export default function GeneralMetrics({
                   className={cn("mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2")}
                 >
                   {statsHistory.length != 0 ? (
-                    <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+                    <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
                       <div className="mb-5">
                         {t("general.hardwareInfo.npuUsage")}
                       </div>
@@ -766,7 +766,7 @@ export default function GeneralMetrics({
         </div>
         <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
           {statsHistory.length != 0 ? (
-            <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+            <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
               <div className="mb-5">
                 {t("general.otherProcesses.processCpuUsage")}
               </div>
@@ -786,7 +786,7 @@ export default function GeneralMetrics({
             <Skeleton className="aspect-tall w-full" />
           )}
           {statsHistory.length != 0 ? (
-            <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+            <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
               <div className="mb-5">
                 {t("general.otherProcesses.processMemoryUsage")}
               </div>

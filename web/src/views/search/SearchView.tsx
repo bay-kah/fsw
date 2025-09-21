@@ -562,7 +562,7 @@ export default function SearchView({
           (isValidating && !isLoading)) && // or revalidation
           (searchTerm || // or change of filter/search term
             (searchFilter && Object.keys(searchFilter).length !== 0)) && (
-            <ActivityIndicator className="absolute left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-background/80 p-3 dark:bg-background/50" />
+            <ActivityIndicator className="absolute left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 rounded-sm bg-background/80 p-3 dark:bg-background/50" />
           )}
 
         {uniqueResults && (
@@ -576,11 +576,11 @@ export default function SearchView({
                     key={value.id}
                     ref={(item) => (itemRefs.current[index] = item)}
                     data-start={value.start_time}
-                    className="relative flex flex-col rounded-lg"
+                    className="relative flex flex-col rounded-sm"
                   >
                     <div
                       className={cn(
-                        "aspect-square w-full overflow-hidden rounded-t-lg border",
+                        "aspect-square w-full overflow-hidden rounded-t-sm border",
                       )}
                     >
                       <SearchThumbnail
@@ -641,7 +641,7 @@ export default function SearchView({
                     <div
                       className={`review-item-ring pointer-events-none absolute inset-0 z-10 size-full rounded-lg outline outline-[3px] -outline-offset-[2.8px] ${selected ? `shadow-selected outline-selected` : "outline-transparent duration-500"}`}
                     />
-                    <div className="flex w-full grow items-center justify-between rounded-b-lg border border-t-0 bg-card p-3 text-card-foreground">
+                    <div className="flex w-full grow items-center justify-between rounded-b-sm border border-t-0 bg-card p-3 text-card-foreground">
                       <SearchThumbnailFooter
                         searchResult={value}
                         columns={columns}

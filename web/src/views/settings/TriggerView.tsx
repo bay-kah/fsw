@@ -385,7 +385,7 @@ export default function TriggerView({
   return (
     <div className="flex size-full flex-col md:flex-row">
       <Toaster position="top-center" closeButton={true} />
-      <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-lg border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0">
+      <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-sm border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0">
         <div className="mb-5 flex flex-row items-center justify-between gap-2">
           <div className="flex flex-col items-start">
             <Heading as="h3" className="my-2">
@@ -412,7 +412,7 @@ export default function TriggerView({
           </Button>
         </div>
         <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <div className="scrollbar-container flex-1 overflow-hidden rounded-lg border border-border bg-background_alt">
+          <div className="scrollbar-container flex-1 overflow-hidden rounded-sm border border-border bg-background_alt">
             <div className="h-full overflow-auto p-0">
               {triggers.length === 0 ? (
                 <div className="flex h-24 items-center justify-center">
@@ -426,11 +426,11 @@ export default function TriggerView({
                     <div
                       key={trigger.name}
                       id={`trigger-${trigger.name}`}
-                      className="relative flex items-center justify-between rounded-lg border border-border bg-background p-4 transition-all"
+                      className="relative flex items-center justify-between rounded-sm border border-border bg-background p-4 transition-all"
                     >
                       <div
                         className={cn(
-                          "trigger-ring pointer-events-none absolute inset-0 z-10 size-full rounded-md outline outline-[3px] -outline-offset-[2.8px] duration-500",
+                          "trigger-ring pointer-events-none absolute inset-0 z-10 size-full rounded-sm outline outline-[3px] -outline-offset-[2.8px] duration-500",
                           triggeredTrigger === trigger.name
                             ? "shadow-selected outline-selected"
                             : "outline-transparent duration-500",

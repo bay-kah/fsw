@@ -480,13 +480,13 @@ export default function DraggableGridLayout({
       includeBirdseye !== currentIncludeBirdseye ? (
         <div className="mt-2 grid grid-cols-2 gap-2 px-2 md:gap-4 xl:grid-cols-3 3xl:grid-cols-4">
           {includeBirdseye && birdseyeConfig?.enabled && (
-            <Skeleton className="size-full rounded-lg md:rounded-2xl" />
+            <Skeleton className="size-full rounded-sm md:rounded-sm" />
           )}
           {cameras.map((camera) => {
             return (
               <Skeleton
                 key={camera.name}
-                className="aspect-video size-full rounded-lg md:rounded-2xl"
+                className="aspect-video size-full rounded-sm md:rounded-sm"
               />
             );
           })}
@@ -613,7 +613,7 @@ export default function DraggableGridLayout({
                     useWebGL={useWebGL}
                     cameraRef={cameraRef}
                     className={cn(
-                      "rounded-lg bg-black md:rounded-2xl",
+                      "rounded-sm bg-black md:rounded-sm",
                       grow,
                       isEditMode &&
                         showCircles &&
@@ -662,7 +662,7 @@ export default function DraggableGridLayout({
               <Tooltip>
                 <TooltipTrigger asChild>
                   <div
-                    className="cursor-pointer rounded-lg bg-secondary text-secondary-foreground opacity-60 transition-all duration-300 hover:bg-muted hover:opacity-100"
+                    className="cursor-pointer rounded-sm bg-secondary text-secondary-foreground opacity-60 transition-all duration-300 hover:bg-muted hover:opacity-100"
                     onClick={() =>
                       setIsEditMode((prevIsEditMode) => !prevIsEditMode)
                     }
@@ -686,7 +686,7 @@ export default function DraggableGridLayout({
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <div
-                          className="cursor-pointer rounded-lg bg-secondary text-secondary-foreground opacity-60 transition-all duration-300 hover:bg-muted hover:opacity-100"
+                          className="cursor-pointer rounded-sm bg-secondary text-secondary-foreground opacity-60 transition-all duration-300 hover:bg-muted hover:opacity-100"
                           onClick={() =>
                             setEditGroup((prevEditGroup) => !prevEditGroup)
                           }
@@ -704,7 +704,7 @@ export default function DraggableGridLayout({
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div
-                        className="cursor-pointer rounded-lg bg-secondary text-secondary-foreground opacity-60 transition-all duration-300 hover:bg-muted hover:opacity-100"
+                        className="cursor-pointer rounded-sm bg-secondary text-secondary-foreground opacity-60 transition-all duration-300 hover:bg-muted hover:opacity-100"
                         onClick={toggleFullscreen}
                       >
                         {fullscreen ? (
@@ -733,10 +733,10 @@ export default function DraggableGridLayout({
 function CornerCircles() {
   return (
     <>
-      <div className="pointer-events-none absolute left-[-4px] top-[-4px] z-50 size-3 rounded-full bg-primary-variant p-2 text-background outline-2 outline-muted" />
-      <div className="pointer-events-none absolute right-[-4px] top-[-4px] z-50 size-3 rounded-full bg-primary-variant p-2 text-background outline-2 outline-muted" />
-      <div className="pointer-events-none absolute bottom-[-4px] right-[-4px] z-50 size-3 rounded-full bg-primary-variant p-2 text-background outline-2 outline-muted" />
-      <div className="pointer-events-none absolute bottom-[-4px] left-[-4px] z-50 size-3 rounded-full bg-primary-variant p-2 text-background outline-2 outline-muted" />
+      <div className="pointer-events-none absolute left-[-4px] top-[-8px] z-50 size-3 rounded-full bg-primary-variant p-2 text-background outline-2 outline-muted" />
+      <div className="pointer-events-none absolute right-[-4px] top-[-8px] z-50 size-3 rounded-full bg-primary-variant p-2 text-background outline-2 outline-muted" />
+      <div className="pointer-events-none absolute bottom-[-4px] right-[-8px] z-50 size-3 rounded-full bg-primary-variant p-2 text-background outline-2 outline-muted" />
+      <div className="pointer-events-none absolute bottom-[-4px] left-[-8px] z-50 size-3 rounded-full bg-primary-variant p-2 text-background outline-2 outline-muted" />
     </>
   );
 }

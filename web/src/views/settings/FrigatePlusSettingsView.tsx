@@ -211,7 +211,7 @@ export default function FrigatePlusSettingsView({
     <>
       <div className="flex size-full flex-col md:flex-row">
         <Toaster position="top-center" closeButton={true} />
-        <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-lg border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0">
+        <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-sm border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0">
           <Heading as="h3" className="my-2">
             {t("frigatePlus.title")}
           </Heading>
@@ -515,7 +515,7 @@ export default function FrigatePlusSettingsView({
                   </div>
                 )}
                 {needCleanSnapshots() && (
-                  <div className="mt-2 max-w-xl rounded-lg border border-secondary-foreground bg-secondary p-4 text-sm text-danger">
+                  <div className="mt-2 max-w-xl rounded-sm border border-secondary-foreground bg-secondary p-4 text-sm text-danger">
                     <div className="flex items-center gap-2">
                       <IoIosWarning className="mr-2 size-5 text-danger" />
                       <div className="max-w-[85%] text-sm">

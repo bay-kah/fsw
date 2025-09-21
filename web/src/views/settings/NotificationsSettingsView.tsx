@@ -331,7 +331,7 @@ export default function NotificationView({
 
   if (!("Notification" in window) || !window.isSecureContext) {
     return (
-      <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-lg border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0">
+      <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-sm border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0">
         <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
           <div className="col-span-1">
             <Heading as="h3" className="my-2">
@@ -385,7 +385,7 @@ export default function NotificationView({
     <>
       <div className="flex size-full flex-col md:flex-row">
         <Toaster position="top-center" closeButton={true} />
-        <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-lg border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0">
+        <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-sm border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0">
           <div
             className={cn(
               isAdmin && "grid w-full grid-cols-1 gap-4 md:grid-cols-2",
@@ -452,7 +452,7 @@ export default function NotificationView({
                                   {t("notification.cameras.title")}
                                 </FormLabel>
                               </div>
-                              <div className="max-w-md space-y-2 rounded-lg bg-secondary p-4">
+                              <div className="max-w-md space-y-2 rounded-sm bg-secondary p-4">
                                 <FormField
                                   control={form.control}
                                   name="allEnabled"
@@ -628,7 +628,7 @@ export default function NotificationView({
                     </div>
 
                     <div className="flex max-w-2xl flex-col gap-2.5">
-                      <div className="rounded-lg bg-secondary p-5">
+                      <div className="rounded-sm bg-secondary p-5">
                         <div className="grid gap-6">
                           {notificationCameras.map((item) => (
                             <CameraNotificationSwitch

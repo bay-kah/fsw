@@ -531,7 +531,7 @@ export default function LiveDashboardView({
                   <LivePlayer
                     cameraRef={cameraRef}
                     key={camera.name}
-                    className={`${grow} rounded-lg bg-black md:rounded-2xl`}
+                    className={`${grow} rounded-sm bg-black md:rounded-sm`}
                     windowVisible={
                       windowVisible && visibleCameras.includes(camera.name)
                     }
@@ -566,7 +566,7 @@ export default function LiveDashboardView({
               <Tooltip>
                 <TooltipTrigger asChild>
                   <div
-                    className="cursor-pointer rounded-lg bg-secondary text-secondary-foreground opacity-60 transition-all duration-300 hover:bg-muted hover:opacity-100"
+                    className="cursor-pointer rounded-sm bg-secondary text-secondary-foreground opacity-60 transition-all duration-300 hover:bg-muted hover:opacity-100"
                     onClick={toggleFullscreen}
                   >
                     {fullscreen ? (

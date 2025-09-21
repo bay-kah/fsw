@@ -252,7 +252,7 @@ export default function CameraMetrics({
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3">
         {statsHistory.length != 0 ? (
-          <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+          <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
             <div className="mb-5">{t("cameras.framesAndDetections")}</div>
             <CameraLineGraph
               graphId="overall-stats"
@@ -263,7 +263,7 @@ export default function CameraMetrics({
             />
           </div>
         ) : (
-          <Skeleton className="h-32 w-full rounded-lg md:rounded-2xl" />
+          <Skeleton className="h-32 w-full rounded-sm md:rounded-sm" />
         )}
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -305,7 +305,7 @@ export default function CameraMetrics({
                       className="grid gap-2 sm:grid-cols-2"
                     >
                       {Object.keys(cameraCpuSeries).includes(camera.name) ? (
-                        <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+                        <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
                           <div className="mb-5">CPU</div>
                           <CameraLineGraph
                             graphId={`${camera.name}-cpu`}
@@ -321,7 +321,7 @@ export default function CameraMetrics({
                         <Skeleton className="aspect-video size-full" />
                       )}
                       {Object.keys(cameraFpsSeries).includes(camera.name) ? (
-                        <div className="rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+                        <div className="rounded-sm bg-background_alt p-2.5 md:rounded-sm">
                           <div className="mb-5">
                             {t("cameras.framesAndDetections")}
                           </div>

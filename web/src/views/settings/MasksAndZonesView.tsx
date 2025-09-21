@@ -433,7 +433,7 @@ export default function MasksAndZonesView({
       {cameraConfig && editingPolygons && (
         <div className="flex size-full flex-col md:flex-row">
           <Toaster position="top-center" closeButton={true} />
-          <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-lg border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0 md:w-3/12">
+          <div className="scrollbar-container order-last mb-10 mt-2 flex h-full w-full flex-col overflow-y-auto rounded-sm border-[1px] border-secondary-foreground bg-background_alt p-2 md:order-none md:mb-0 md:mr-2 md:mt-0 md:w-3/12">
             {editPane == "zone" && (
               <ZoneEditPane
                 polygons={editingPolygons}
@@ -517,7 +517,7 @@ export default function MasksAndZonesView({
                           <TooltipTrigger asChild>
                             <Button
                               variant="secondary"
-                              className="size-6 rounded-md bg-secondary-foreground p-1 text-background"
+                              className="size-6 rounded-sm bg-secondary-foreground p-1 text-background"
                               aria-label={t("masksAndZones.zones.add")}
                               onClick={() => {
                                 setEditPane("zone");
@@ -585,7 +585,7 @@ export default function MasksAndZonesView({
                           <TooltipTrigger asChild>
                             <Button
                               variant="secondary"
-                              className="size-6 rounded-md bg-secondary-foreground p-1 text-background"
+                              className="size-6 rounded-sm bg-secondary-foreground p-1 text-background"
                               aria-label={t("masksAndZones.motionMasks.add")}
                               onClick={() => {
                                 setEditPane("motion_mask");
@@ -655,7 +655,7 @@ export default function MasksAndZonesView({
                           <TooltipTrigger asChild>
                             <Button
                               variant="secondary"
-                              className="size-6 rounded-md bg-secondary-foreground p-1 text-background"
+                              className="size-6 rounded-sm bg-secondary-foreground p-1 text-background"
                               aria-label={t("masksAndZones.objectMasks.add")}
                               onClick={() => {
                                 setEditPane("object_mask");

@@ -73,7 +73,7 @@ function ModelCard({ config, onClick }: ModelCardProps) {
     <div
       key={config.name}
       className={cn(
-        "flex h-60 cursor-pointer flex-col items-center gap-2 rounded-lg bg-card p-2 outline outline-[3px]",
+        "flex h-60 cursor-pointer flex-col items-center gap-2 rounded-sm bg-card p-2 outline outline-[3px]",
         "outline-transparent duration-500",
         isMobile && "w-full",
       )}

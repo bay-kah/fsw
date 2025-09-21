@@ -151,7 +151,7 @@ function ThumbnailRow({
   };
 
   return (
-    <div className="rounded-lg bg-background_alt p-2 md:px-4">
+    <div className="rounded-sm bg-background_alt p-2 md:px-4">
       <div className="flex flex-row items-center text-lg smart-capitalize">
         {getTranslatedLabel(objectType)}
         {searchResults && (
@@ -259,7 +259,7 @@ function ExploreThumbnailImage({
         <img
           ref={imgRef}
           className={cn(
-            "absolute size-full cursor-pointer rounded-lg object-cover transition-all duration-300 ease-in-out lg:rounded-2xl",
+            "absolute size-full cursor-pointer rounded-sm object-cover transition-all duration-300 ease-in-out lg:rounded-sm",
             !imgLoaded && "invisible",
           )}
           style={
@@ -278,7 +278,7 @@ function ExploreThumbnailImage({
           alt={`${event.label} thumbnail`}
         />
         {isDesktop && (
-          <div className="absolute bottom-1 right-1 z-10 rounded-lg bg-black/50 px-2 py-1 text-xs text-white">
+          <div className="absolute bottom-1 right-1 z-10 rounded-sm bg-black/50 px-2 py-1 text-xs text-white">
             {event.end_time ? (
               <TimeAgo time={event.start_time * 1000} dense />
             ) : (

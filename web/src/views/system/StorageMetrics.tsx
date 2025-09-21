@@ -100,7 +100,7 @@ export default function StorageMetrics({
         {t("storage.overview")}
       </div>
       <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-3">
-        <div className="flex-col rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+        <div className="flex-col rounded-sm bg-background_alt p-2.5 md:rounded-sm">
           <div className="mb-5 flex flex-row items-center justify-between">
             {t("storage.recordings.title")}
             <Popover>
@@ -138,7 +138,7 @@ export default function StorageMetrics({
             </div>
           )}
         </div>
-        <div className="flex-col rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+        <div className="flex-col rounded-sm bg-background_alt p-2.5 md:rounded-sm">
           <div className="mb-5">/tmp/cache</div>
           <StorageGraph
             graphId="general-cache"
@@ -146,7 +146,7 @@ export default function StorageMetrics({
             total={stats.service.storage["/tmp/cache"]["total"]}
           />
         </div>
-        <div className="flex-col rounded-lg bg-background_alt p-2.5 md:rounded-2xl">
+        <div className="flex-col rounded-sm bg-background_alt p-2.5 md:rounded-sm">
           <div className="mb-5 flex flex-row items-center justify-between">
             /dev/shm
             {stats.service.storage["/dev/shm"]["total"] <
@@ -197,7 +197,7 @@ export default function StorageMetrics({
       <div className="mt-4 text-sm font-medium text-muted-foreground">
         {t("storage.cameraStorage.title")}
       </div>
-      <div className="mt-4 bg-background_alt p-2.5 md:rounded-2xl">
+      <div className="mt-4 bg-background_alt p-2.5 md:rounded-sm">
         <CombinedStorageGraph
           graphId={`single-storage`}
           cameraStorage={cameraStorage}
