@@ -1,10 +1,10 @@
 @layer base {
   :root {
-  --background: hsl(0, 0%, 65%);
-  --background: 0 0% 65%;
+  --background: hsl(0, 0%, 100%);
+  --background: 0 0% 100%;
 
-  --background-alt: hsl(124, 7%, 59%);
-  --background-alt: 124 7% 59%;
+  --background-alt: hsl(0, 2%, 11%);
+  --background-alt: 0 2% 11%;
 
   --foreground: hsl(0, 0%, 0%);
   --foreground: 0 0% 0%;
