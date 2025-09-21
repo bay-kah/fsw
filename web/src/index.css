@@ -13,8 +13,9 @@
 /* Duplicated var names with color space modifiers for swatches in vscode. See https://github.com/tailwindlabs/tailwindcss/discussions/10619 */
 
 @layer base {
-  * {
+* {
     @apply border-border;
+    border-radius: 0 !important;
   }
   body {
     @apply bg-background text-foreground;
