@@ -737,7 +737,7 @@ function DetectionReview({
                     }
                     className="review-item relative rounded-sm"
                   >
-                    <div className="aspect-video overflow-hidden rounded-sm">
+                    <div className="aspect-video overflow-hidden rounded-none">
                       <PreviewThumbnailPlayer
                         review={value}
                         allPreviews={relevantPreviews}
@@ -1123,7 +1123,7 @@ function MotionReview({
                   </>
                 ) : (
                   <Skeleton
-                    className={`size-full rounded-sm md:rounded-sm ${spans} ${grow}`}
+                    className={`size-full rounded-none md:rounded-none ${spans} ${grow}`}
                   />
                 )}
               </div>

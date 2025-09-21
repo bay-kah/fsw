@@ -232,7 +232,6 @@ export function VideoPreview({
       <video
         ref={playerRef}
         className="pointer-events-none aspect-video size-full bg-black rounded-none"
-        style={{ borderRadius: '0 !important' }}
         autoPlay
         playsInline
         preload="auto"
