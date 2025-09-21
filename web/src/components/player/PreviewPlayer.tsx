@@ -93,7 +93,7 @@ export default function PreviewPlayer({
   return (
     <div
       className={cn(
-        "flex size-full items-center justify-center rounded-sm bg-background_alt text-primary md:rounded-sm",
+        "flex size-full items-center justify-center rounded-none bg-background_alt text-primary md:rounded-none",
         className,
       )}
     >
@@ -281,7 +281,7 @@ function PreviewVideoPlayer({
     <div
       ref={visibilityRef}
       className={cn(
-        "relative flex w-full justify-center overflow-hidden rounded-sm bg-black md:rounded-sm",
+        "relative flex w-full justify-center overflow-hidden rounded-none bg-black md:rounded-none",
         onClick && "cursor-pointer",
         className,
       )}
@@ -343,7 +343,7 @@ function PreviewVideoPlayer({
         </video>
       )}
       {cameraPreviews && !currentPreview && (
-        <div className="absolute inset-0 flex items-center justify-center rounded-sm bg-background_alt text-primary dark:bg-black md:rounded-sm">
+        <div className="absolute inset-0 flex items-center justify-center rounded-none bg-background_alt text-primary dark:bg-black md:rounded-none">
           {t("noPreviewFoundFor", { camera: cameraName })}
         </div>
       )}
@@ -561,12 +561,12 @@ function PreviewFramesPlayer({
     >
       <img
         ref={imgRef}
-        className={`size-full rounded-sm bg-black object-contain md:rounded-sm`}
+        className={`size-full rounded-none bg-black object-contain md:rounded-none`}
         loading="lazy"
         onLoad={onImageLoaded}
       />
       {previewFrames?.length === 0 && (
-        <div className="-y-translate-1/2 align-center absolute inset-x-0 top-1/2 rounded-sm bg-background_alt text-center text-primary dark:bg-black md:rounded-sm">
+        <div className="-y-translate-1/2 align-center absolute inset-x-0 top-1/2 rounded-none bg-background_alt text-center text-primary dark:bg-black md:rounded-none">
           {t("noPreviewFoundFor", { cameraName: cameraName })}
         </div>
       )}

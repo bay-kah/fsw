@@ -231,7 +231,7 @@ export default function PreviewThumbnailPlayer({
         {!playingBack && (
           <div
             className={cn(
-              "rounded-t-sm pointer-events-none absolute inset-x-0 top-0 h-[30%] w-full bg-gradient-to-b from-black/60 to-transparent",
+              "rounded-t-none pointer-events-none absolute inset-x-0 top-0 h-[30%] w-full bg-gradient-to-b from-black/60 to-transparent",
               !isSafari && "z-10",
             )}
           />
@@ -329,7 +329,7 @@ export default function PreviewThumbnailPlayer({
         {!playingBack && (
           <div
             className={cn(
-              "rounded-b-sm pointer-events-none absolute inset-x-0 bottom-0 h-[20%] w-full bg-gradient-to-t from-black/60 to-transparent",
+              "rounded-b-none pointer-events-none absolute inset-x-0 bottom-0 h-[20%] w-full bg-gradient-to-t from-black/60 to-transparent",
               !isSafari && "z-10",
             )}
           >

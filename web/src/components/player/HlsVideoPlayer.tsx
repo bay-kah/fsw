@@ -298,7 +298,7 @@ export default function HlsVideoPlayer({
       >
         <video
           ref={videoRef}
-          className={`size-full rounded-sm bg-black md:rounded-sm ${loadedMetadata ? "" : "invisible"} cursor-pointer`}
+          className={`size-full rounded-none bg-black md:rounded-none ${loadedMetadata ? "" : "invisible"} cursor-pointer`}
           preload="auto"
           autoPlay
           controls={!frigateControls}
