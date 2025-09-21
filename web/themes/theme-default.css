@@ -12,8 +12,8 @@
   --card: hsl(0, 0%, 100%);
   --card: 0 0% 100%;
 
-  --card-foreground: hsl(0, 0%, 0%);
-  --card-foreground: 0 0% 0%;
+  --card-foreground: hsl(0, 0%, 9%);
+  --card-foreground: 0 0% 9%;
 
   --popover: hsl(0, 0%, 100%);
   --popover: 0 0% 100%;
@@ -39,8 +39,8 @@
   --secondary-highlight: hsl(0, 0%, 94%);
   --secondary-highlight: 0 0% 94%;
 
-  --neutral: hsl(0, 0%, 45.1%);
-  --neutral: 0 0% 45.1%;
+  --neutral: hsl(0, 0%, 13%);
+  --neutral: 0 0% 45.13%;
 
   --neutral_variant: hsl(0, 0%, 32.2%);
   --neutral_variant: 0 0% 32.2%;
@@ -57,13 +57,13 @@
   --accent-foreground: hsl(0, 0%, 100%);
   --accent-foreground: 0 0% 100%;
 
-  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive: hsl(0, 100%, 50%);
   --destructive: 0 84.2% 60.2%;
 
   --destructive-foreground: hsl(0, 100%, 83%);
   --destructive-foreground: 0 100% 83%;
 
-  --warning: hsl(17, 87%, 18%);
+  --warning: hsl(0, 100%, 50%);
   --warning: 17 87% 18%;
 
   --warning-foreground: hsl(0, 0%, 100%);
