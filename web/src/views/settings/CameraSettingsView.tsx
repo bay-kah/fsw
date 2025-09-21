@@ -811,7 +811,7 @@ export default function CameraSettingsView({
             <>
               <div className="mb-4 flex items-center gap-2">
                 <Button
-                  className={`flex items-center gap-2.5 rounded-sm`}
+                  className={`flex items-center gap-2.5 rounded-md`}
                   aria-label={t("label.back", { ns: "common" })}
                   size="sm"
                   onClick={handleBack}

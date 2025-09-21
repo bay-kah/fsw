@@ -452,7 +452,7 @@ export default function NotificationView({
                                   {t("notification.cameras.title")}
                                 </FormLabel>
                               </div>
-                              <div className="max-w-md space-y-2 rounded-sm bg-secondary p-4">
+                              <div className="max-w-md space-y-2 rounded-md bg-secondary p-4">
                                 <FormField
                                   control={form.control}
                                   name="allEnabled"

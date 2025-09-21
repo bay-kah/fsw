@@ -531,7 +531,7 @@ export default function LiveDashboardView({
                   <LivePlayer
                     cameraRef={cameraRef}
                     key={camera.name}
-                    className={`${grow} rounded-sm bg-black md:rounded-sm`}
+                    className={`${grow} rounded-none bg-black md:rounded-none`}
                     windowVisible={
                       windowVisible && visibleCameras.includes(camera.name)
                     }

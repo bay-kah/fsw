@@ -213,7 +213,7 @@ export default function LiveBirdseyeView({
         >
           {!fullscreen ? (
             <Button
-              className={`flex items-center gap-2 rounded-sm ${isMobile ? "ml-2" : "ml-0"}`}
+              className={`flex items-center gap-2 rounded-md ${isMobile ? "ml-2" : "ml-0"}`}
               aria-label={t("label.back", { ns: "common" })}
               size={isMobile ? "icon" : "sm"}
               onClick={() => navigate(-1)}

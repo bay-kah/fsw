@@ -159,7 +159,7 @@ function Exports() {
           </DialogTitle>
           <video
             className={cn(
-              "size-full rounded-lg md:rounded-2xl",
+              "size-full rounded-sm md:rounded-sm",
               selectedAspect < 1.5 && "aspect-video h-full",
             )}
             playsInline

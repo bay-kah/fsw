@@ -459,7 +459,7 @@ export default function LiveCameraView({
               className={`flex items-center gap-2 ${isMobile ? "landscape:flex-col" : ""}`}
             >
               <Button
-                className={`flex items-center gap-2.5 rounded-sm`}
+                className={`flex items-center gap-2.5 rounded-md`}
                 aria-label={t("label.back", { ns: "common" })}
                 size="sm"
                 onClick={() => navigate(-1)}
@@ -472,7 +472,7 @@ export default function LiveCameraView({
                 )}
               </Button>
               <Button
-                className="flex items-center gap-2.5 rounded-sm"
+                className="flex items-center gap-2.5 rounded-md"
                 aria-label={t("history.label")}
                 size="sm"
                 onClick={() => {
@@ -501,7 +501,7 @@ export default function LiveCameraView({
           )}
           <TooltipProvider>
             <div
-              className={`flex flex-row items-center gap-2 *:rounded-sm ${isMobile ? "landscape:flex-col" : ""}`}
+              className={`flex flex-row items-center gap-2 *:rounded-md ${isMobile ? "landscape:flex-col" : ""}`}
             >
               {fullscreen && (
                 <Button
@@ -1337,7 +1337,7 @@ function FrigateCameraFeatures({
           <DropdownMenuTrigger>
             <div
               className={cn(
-                "flex flex-col items-center justify-center rounded-sm bg-secondary p-2 text-secondary-foreground md:p-0",
+                "flex flex-col items-center justify-center rounded-md bg-secondary p-2 text-secondary-foreground md:p-0",
               )}
             >
               <FaCog
@@ -1520,7 +1520,7 @@ function FrigateCameraFeatures({
                           </p>
                         </div>
                         <Button
-                          className={`flex items-center gap-2.5 rounded-sm`}
+                          className={`flex items-center gap-2.5 rounded-md`}
                           aria-label={t("stream.lowBandwidth.resetStream")}
                           variant="outline"
                           size="sm"

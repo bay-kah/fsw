@@ -337,7 +337,7 @@ export default function MotionTunerView({
           </div>
         </div>
       ) : (
-        <Skeleton className="size-full rounded-sm md:rounded-sm" />
+        <Skeleton className="size-full rounded-none md:rounded-none" />
       )}
     </div>
   );

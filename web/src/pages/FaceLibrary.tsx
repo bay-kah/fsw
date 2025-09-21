@@ -360,7 +360,7 @@ export default function FaceLibrary() {
               <div className="p-1">{`${selectedFaces.length} selected`}</div>
               <div className="p-1">{"|"}</div>
               <div
-                className="cursor-pointer p-2 text-primary hover:rounded-lg hover:bg-secondary"
+                className="cursor-pointer p-2 text-primary hover:rounded-sm hover:bg-secondary"
                 onClick={() => setSelectedFaces([])}
               >
                 {t("button.unselect", { ns: "common" })}
@@ -778,7 +778,7 @@ function FaceAttemptGroup({
   return (
     <div
       className={cn(
-        "flex cursor-pointer flex-col gap-2 rounded-lg bg-card p-2 outline outline-[3px]",
+        "flex cursor-pointer flex-col gap-2 rounded-sm bg-card p-2 outline outline-[3px]",
         isMobile && "w-full",
         allFacesSelected
           ? "shadow-selected outline-selected"
@@ -964,13 +964,13 @@ function FaceAttempt({
     <>
       <div
         className={cn(
-          "relative flex cursor-pointer flex-col rounded-lg outline outline-[3px]",
+          "relative flex cursor-pointer flex-col rounded-sm outline outline-[3px]",
           selected
             ? "shadow-selected outline-selected"
             : "outline-transparent duration-500",
         )}
       >
-        <div className="relative w-full select-none overflow-hidden rounded-lg">
+        <div className="relative w-full select-none overflow-hidden rounded-sm">
           <img
             ref={imgRef}
             onLoad={() => setImageLoaded(true)}
@@ -982,7 +982,7 @@ function FaceAttempt({
             }}
           />
           {imageArea != undefined && (
-            <div className="absolute bottom-1 right-1 z-10 rounded-lg bg-black/50 px-2 py-1 text-xs text-white">
+            <div className="absolute bottom-1 right-1 z-10 rounded-sm bg-black/50 px-2 py-1 text-xs text-white">
               {t("pixels", { area: imageArea })}
             </div>
           )}
@@ -1096,7 +1096,7 @@ function FaceImage({
   return (
     <div
       className={cn(
-        "flex cursor-pointer flex-col gap-2 rounded-lg bg-card outline outline-[3px]",
+        "flex cursor-pointer flex-col gap-2 rounded-sm bg-card outline outline-[3px]",
         selected
           ? "shadow-selected outline-selected"
           : "outline-transparent duration-500",
@@ -1113,11 +1113,11 @@ function FaceImage({
         )}
       >
         <img
-          className="h-40 rounded-lg"
+          className="h-40 rounded-sm"
           src={`${baseUrl}clips/faces/${name}/${image}`}
         />
       </div>
-      <div className="rounded-b-lg bg-card p-3">
+      <div className="rounded-b-sm bg-card p-3">
         <div className="flex w-full flex-row items-center justify-between gap-2">
           <div className="flex flex-col items-start text-xs text-primary-variant">
             <div className="smart-capitalize">{name}</div>

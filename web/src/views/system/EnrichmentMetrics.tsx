@@ -143,7 +143,7 @@ export default function EnrichmentMetrics({
               ))}
             </>
           ) : (
-            <Skeleton className="aspect-video w-full rounded-sm md:rounded-sm" />
+            <Skeleton className="aspect-video w-full rounded-none md:rounded-none" />
           )}
         </div>
       </div>
