@@ -92,13 +92,13 @@ export default function CameraImage({
                 ? "h-full w-auto"
                 : "h-auto w-full"
               : "invisible",
-            "rounded-lg md:rounded-2xl",
+            "rounded-none md:rounded-none",
           )}
           onLoad={handleImageLoad}
           loading="lazy"
         />
       ) : (
-        <div className="size-full rounded-lg border-2 border-muted bg-background_alt text-center md:rounded-2xl" />
+        <div className="size-full rounded-none border-2 border-muted bg-background_alt text-center md:rounded-none" />
       )}
       {!imageLoaded && enabled ? (
         <div className="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center">
