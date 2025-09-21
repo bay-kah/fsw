@@ -259,7 +259,7 @@ function ExploreThumbnailImage({
         <img
           ref={imgRef}
           className={cn(
-            "absolute size-full cursor-pointer rounded-sm object-cover transition-all duration-300 ease-in-out lg:rounded-sm",
+            "absolute size-full cursor-pointer rounded-none object-cover transition-all duration-300 ease-in-out lg:rounded-none",
             !imgLoaded && "invisible",
           )}
           style={
@@ -278,7 +278,7 @@ function ExploreThumbnailImage({
           alt={`${event.label} thumbnail`}
         />
         {isDesktop && (
-          <div className="absolute bottom-1 right-1 z-10 rounded-sm bg-black/50 px-2 py-1 text-xs text-white">
+          <div className="absolute bottom-1 right-1 z-10 rounded-none bg-black/50 px-2 py-1 text-xs text-white">
             {event.end_time ? (
               <TimeAgo time={event.start_time * 1000} dense />
             ) : (

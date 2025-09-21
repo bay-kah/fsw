@@ -530,7 +530,7 @@ export function CameraGroupRow({
     <>
       <div
         key={group[0]}
-        className="transition-background flex flex-row items-center justify-between rounded-lg duration-100 md:p-1"
+        className="transition-background flex flex-row items-center justify-between rounded-none duration-100 md:p-1"
       >
         <div className={`flex items-center`}>
           <p className="cursor-default">{group[0]}</p>
