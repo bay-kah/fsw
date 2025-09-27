@@ -1,11 +1,12 @@
 services:
   sensewatch:
     container_name: sensewatch
-    image: sensewatch:16.1   # your locally built image
+    image: sensewatch   # your locally built image
     privileged: true
     restart: unless-stopped
-    shm_size: "64mb"
+    shm_size: "256mb"
     ports:
+      - "8971:8971"
       - "5050:5000"   # Web UI
       - "8554:8554"   # RTSP restreams (if enabled)
       - "1935:1935"   # RTMP restreams (if enabled)
