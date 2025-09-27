@@ -665,6 +665,28 @@
       "untilRestart": "Suspend until apply or restart"
     },
     "cancelSuspension": "Cancel Suspension",
+    "schedule": {
+      "title": "Notification Schedule",
+      "description": "Configure quiet hours when notifications will be automatically disabled.",
+      "enableSchedule": "Enable Notification Schedule",
+      "enableDescription": "Automatically suspend notifications during specified quiet hours.",
+      "quietStart": "Quiet Hours Start",
+      "quietEnd": "Quiet Hours End",
+      "timezone": "Timezone",
+      "selectTimezone": "Select timezone...",
+      "timezoneDescription": "All times are based on this timezone setting.",
+      "preview": {
+        "title": "Preview",
+        "disabled": "Notification schedule is disabled - notifications will work normally.",
+        "sameDay": "Notifications will be suspended from {{start}} to {{end}} ({{timezone}}) each day.",
+        "overnight": "Notifications will be suspended from {{start}} to {{end}} ({{timezone}}) overnight."
+      },
+      "toast": {
+        "success": {
+          "saved": "Notification schedule saved successfully."
+        }
+      }
+    },
     "toast": {
       "success": {
         "registered": "Successfully registered for notifications. Applying these changes is required before any notifications (including a test notification) can be sent.",

@@ -48,6 +48,7 @@ import { useDocDomain } from "@/hooks/use-doc-domain";
 import { CameraNameLabel } from "@/components/camera/CameraNameLabel";
 import { useIsAdmin } from "@/hooks/use-is-admin";
 import { cn } from "@/lib/utils";
+import NotificationScheduleSettings from "@/components/settings/NotificationScheduleSettings";
 
 const NOTIFICATION_SERVICE_WORKER = "notifications-worker.js";
 
@@ -69,6 +70,7 @@ export default function NotificationView({
   // roles
 
   const isAdmin = useIsAdmin();
+  const { data: profile } = useSWR("profile");
 
   const { data: config, mutate: updateConfig } = useSWR<FrigateConfig>(
     "config",
@@ -639,6 +641,14 @@ export default function NotificationView({
                         </div>
                       </div>
                     </div>
+
+                    {/* Notification Schedule Settings */}
+                    {profile?.username && profile.username !== "anonymous" && (
+                      <>
+                        <Separator className="my-2 flex bg-secondary" />
+                        <NotificationScheduleSettings username={profile.username} />
+                      </>
+                    )}
                   </div>
                 </div>
               )}
