@@ -9,6 +9,7 @@ import threading
 from dataclasses import dataclass
 from multiprocessing.synchronize import Event as MpEvent
 from typing import Any, Callable
+import zoneinfo
 
 from py_vapid import Vapid01
 from pywebpush import WebPusher
@@ -162,6 +163,51 @@ class WebPushClient(Communicator):
     def is_camera_suspended(self, camera: str) -> bool:
         return datetime.datetime.now().timestamp() <= self.suspended_cameras[camera]
 
+    def is_user_in_quiet_hours(self, username: str) -> bool:
+        """Check if user is currently in their quiet hours and notifications should be suppressed."""
+        try:
+            user = User.get(User.username == username)
+            schedule = user.notification_schedule
+            
+            # If scheduling is not enabled, allow notifications
+            if not schedule.get("enabled", False):
+                return False
+            
+            quiet_hours = schedule.get("quiet_hours", {})
+            timezone_str = schedule.get("timezone", "UTC")
+            
+            # Get current time in user's timezone
+            try:
+                user_tz = zoneinfo.ZoneInfo(timezone_str)
+            except (zoneinfo.ZoneInfoNotFoundError, KeyError):
+                logger.warning(f"Invalid timezone '{timezone_str}' for user {username}, using UTC")
+                user_tz = zoneinfo.ZoneInfo("UTC")
+            
+            now = datetime.datetime.now(user_tz)
+            current_time = now.time()
+            
+            start_str = quiet_hours.get("start", "22:00")
+            end_str = quiet_hours.get("end", "08:00")
+            
+            # Parse time strings
+            start_time = datetime.time.fromisoformat(start_str)
+            end_time = datetime.time.fromisoformat(end_str)
+            
+            # Handle quiet hours that span midnight
+            if start_time <= end_time:
+                # Same day quiet hours (e.g., 14:00 to 16:00)
+                return start_time <= current_time <= end_time
+            else:
+                # Overnight quiet hours (e.g., 22:00 to 08:00)
+                return current_time >= start_time or current_time <= end_time
+                
+        except User.DoesNotExist:
+            logger.warning(f"User {username} not found when checking quiet hours")
+            return False
+        except Exception as e:
+            logger.error(f"Error checking quiet hours for user {username}: {e}")
+            return False
+
     def publish(self, topic: str, payload: Any, retain: bool = False) -> None:
         """Wrapper for publishing when client is in valid state."""
         # check for updated notification config
@@ -248,6 +294,11 @@ class WebPushClient(Communicator):
             try:
                 notification = self.notification_queue.get(timeout=1.0)
                 self.check_registrations()
+
+                # Check if user is in quiet hours (skip for test notifications)
+                if notification.notification_type != "test" and self.is_user_in_quiet_hours(notification.user):
+                    logger.debug(f"Skipping notification for {notification.user} - user is in quiet hours")
+                    continue
 
                 for pusher in self.web_pushers[notification.user]:
                     endpoint = pusher.subscription_info["endpoint"]

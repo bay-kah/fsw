@@ -26,3 +26,9 @@ class AppPostLoginBody(BaseModel):
 
 class AppPutRoleBody(BaseModel):
     role: str
+
+
+class AppPutNotificationScheduleBody(BaseModel):
+    enabled: bool
+    quiet_hours: Dict[str, str]  # {"start": "22:00", "end": "08:00"}
+    timezone: str

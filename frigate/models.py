@@ -134,6 +134,11 @@ class User(Model):
     )
     password_hash = CharField(null=False, max_length=120)
     notification_tokens = JSONField()
+    notification_schedule = JSONField(default={
+        "enabled": False,
+        "quiet_hours": {"start": "22:00", "end": "08:00"},
+        "timezone": "UTC"
+    })
 
     @classmethod
     def get_allowed_cameras(

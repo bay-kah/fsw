@@ -24,6 +24,7 @@ from frigate.api.defs.request.app_body import (
     AppPostUsersBody,
     AppPutPasswordBody,
     AppPutRoleBody,
+    AppPutNotificationScheduleBody,
 )
 from frigate.api.defs.tags import Tags
 from frigate.config import AuthConfig, ProxyConfig
@@ -663,3 +664,61 @@ async def get_allowed_cameras_for_filter(request: Request):
     all_camera_names = set(request.app.frigate_config.cameras.keys())
     roles_dict = request.app.frigate_config.auth.roles
     return User.get_allowed_cameras(role, roles_dict, all_camera_names)
+
+
+@router.get("/users/{username}/notification-schedule")
+async def get_user_notification_schedule(
+    request: Request,
+    username: str,
+    current_user: dict = Depends(get_current_user),
+):
+    """Get notification schedule for a user.""" 
+    # Users can only access their own schedule, or admins can access any
+    if current_user["username"] != username and current_user["role"] != "admin":
+        raise HTTPException(status_code=403, detail="Access denied")
+    
+    try:
+        user = User.get(User.username == username)
+        return JSONResponse(content=user.notification_schedule)
+    except User.DoesNotExist:
+        raise HTTPException(status_code=404, detail="User not found")
+
+
+@router.put("/users/{username}/notification-schedule")
+async def update_user_notification_schedule(
+    request: Request,
+    username: str,
+    body: AppPutNotificationScheduleBody,
+    current_user: dict = Depends(get_current_user),
+):
+    """Update notification schedule for a user."""
+    # Users can only update their own schedule, or admins can update any
+    if current_user["username"] != username and current_user["role"] != "admin":
+        raise HTTPException(status_code=403, detail="Access denied")
+    
+    # Validate time format
+    try:
+        from datetime import time
+        time.fromisoformat(body.quiet_hours["start"])
+        time.fromisoformat(body.quiet_hours["end"])
+    except (ValueError, KeyError):
+        raise HTTPException(status_code=400, detail="Invalid time format. Use HH:MM format")
+    
+    # Validate timezone
+    try:
+        import zoneinfo
+        zoneinfo.ZoneInfo(body.timezone)
+    except zoneinfo.ZoneInfoNotFoundError:
+        raise HTTPException(status_code=400, detail="Invalid timezone")
+    
+    try:
+        user = User.get(User.username == username)
+        user.notification_schedule = {
+            "enabled": body.enabled,
+            "quiet_hours": body.quiet_hours,
+            "timezone": body.timezone
+        }
+        user.save()
+        return JSONResponse(content={"message": "Notification schedule updated successfully"})
+    except User.DoesNotExist:
+        raise HTTPException(status_code=404, detail="User not found")
