@@ -39,6 +39,7 @@ const TIMEZONE_OPTIONS = [
   { value: "Pacific/Honolulu", label: "Hawaii Time" },
   { value: "America/Toronto", label: "Eastern Time - Canada" },
   { value: "America/Vancouver", label: "Pacific Time - Canada" },
+  { value: "America/St_Johns", label: "Newfoundland Time" },
   { value: "America/Mexico_City", label: "Central Time - Mexico" },
   
   // South America
